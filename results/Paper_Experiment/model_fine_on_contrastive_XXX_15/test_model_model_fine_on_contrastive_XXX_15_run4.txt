@@ -1,0 +1,46 @@
+🧪 Starting test evaluation...              Run 4
+🧪 Test Configuration:
+
+🧪 grid_search_vit settings:
+  lr: [0.001, 0.001, 0.001, 0.001, 0.001]
+  lr_gamma: [0.9]
+  step_size: [15]
+  weight_decay: [0.0]
+  dropout: [0.2]
+  optimizer: ['Adam']
+Current Configuration:     {'lr': 0.001, 'lr_gamma': 0.9, 'step_size': 15, 'weight_decay': 0.0, 'dropout': 0.2, 'optimizer': 'Adam'}
+ ------------------------------------------------------------------------------------------------------------------------------
+
+
+📐 Model Parameters:
+  Total parameters:     4,377,680
+  Trainable parameters: 4,377,680
+
+📊 Validation Summary
+  Accuracy:              53.20%
+  Avg Total Loss:        2.0549
+  Classification Loss:   2.0549
+  Reconstruction Loss:   966.5753
+  Contrastive Loss:      1.3737
+
+📌 Per-Class Accuracy:
+  BPSK           : 100.00%
+  QPSK           : 96.20%
+  8PSK           : 92.87%
+  16APSK         : 80.44%
+  32APSK         : 57.33%
+  64APSK         : 9.13%
+  128APSK        : 14.81%
+  16QAM          : 44.32%
+  32QAM          : 23.20%
+  64QAM          : 16.70%
+  128QAM         : 13.72%
+  256QAM         : 4.61%
+  AM-DSB-SC      : 10.72%
+  AM-DSB-WC      : 86.58%
+  FM             : 99.97%
+  GMSK           : 98.57%
+
+📦 Number of test samples: 54958
+⏱️ Total test time: 57.42 seconds
+✅ Test evaluation complete.
