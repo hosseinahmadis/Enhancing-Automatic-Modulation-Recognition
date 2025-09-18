@@ -1,0 +1,3754 @@
+[Shuffle & Restart] Splits set: train=192348, val=27478, test=54958
+Splits created: Train=192348, Val=27478, Test=54958
+Dataset loaded with 274784 total filtered samples
+📦 Original Dataset Size: (320000, 512, 2)
+📦 Used Data Length (from config): 300000
+🧪 Split Summary:
+   - Train Samples: 192348
+   - Val Samples:   27478
+   - Test Samples:  54958
+📝 Labeled vs Unlabeled per split:
+   - Train: 19170 labeled | 173178 unlabeled
+   - Val:   2788 labeled | 24690 unlabeled
+   - Test:  5520 labeled | 49438 unlabeled
+-----------------------------
+IQ min: I = -3.2635, Q = -3.3172
+IQ max: I = 3.3755, Q = 3.4937
+SNR range: [0] to [22]
+
+📊 Class distribution:
+  BPSK: 17173 samples
+  QPSK: 17110 samples
+  8PSK: 17198 samples
+  16APSK: 17155 samples
+  32APSK: 17131 samples
+  64APSK: 17205 samples
+  128APSK: 17225 samples
+  16QAM: 17160 samples
+  32QAM: 17194 samples
+  64QAM: 17264 samples
+  128QAM: 17164 samples
+  256QAM: 17184 samples
+  AM-DSB-SC: 17140 samples
+  AM-DSB-WC: 17088 samples
+  FM: 17128 samples
+  GMSK: 17265 samples
+
+📶 SNR distribution:
+  SNR 0: 25176 samples
+  SNR 2: 24998 samples
+  SNR 4: 24966 samples
+  SNR 6: 24921 samples
+  SNR 8: 24980 samples
+  SNR 10: 24834 samples
+  SNR 12: 24806 samples
+  SNR 14: 24990 samples
+  SNR 16: 25031 samples
+  SNR 18: 24994 samples
+  SNR 20: 25088 samples
+ model_fine_on_reconstruction_contrastive_XXX_10 Training started ---------------------------------------------------------------------
+
+project_title: model_fine_on_reconstruction_contrastive_XXX_10
+grid_search_vit: {'lr': [0.001, 0.001, 0.001, 0.001, 0.001], 'lr_gamma': [0.9], 'step_size': [15], 'weight_decay': [0.0], 'dropout': [0.2], 'optimizer': ['Adam']}
+loss_function: crossentropy
+project_description: 
+oject applies a unified ViT-based model for modulation classification using 
+reconstruction and contrastive learning without a teacher-student framework.
+The training is conducted on the RML2018 dataset using selective class indices,
+with 15% labeled data and optional data augmentations for self-supervised contrastive learning.
+
+print_acc_per_class: False
+files_to_copy: ['configs.yaml', 'trainer.py', 'Vit.py', 'losses.py']
+dataset_path_local: /home/ha168/datasets/wireless/
+dataset_path_server: /home/ha168/datasets/wireless/
+simulating_dataset: None
+rml_2018_dataset: wireless_randomize_snr_0_22_20000.h5
+result_path: results
+shuffle_before_split: True
+data_length: 300000
+snr_range: [-2, 21]
+labeled_percent: 10
+train_class_indices: [3, 4, 5, 8, 9, 10, 11, 12, 13, 14, 15, 16, 19, 20, 21, 22]
+current_classes: ['BPSK', 'QPSK', '8PSK', '16APSK', '32APSK', '64APSK', '128APSK', '16QAM', '32QAM', '64QAM', '128QAM', '256QAM', 'AM-DSB-SC', 'AM-DSB-WC', 'FM', 'GMSK']
+total_class: ['OOK', '4ASK', '8ASK', 'BPSK', 'QPSK', '8PSK', '16PSK', '32PSK', '16APSK', '32APSK', '64APSK', '128APSK', '16QAM', '32QAM', '64QAM', '128QAM', '256QAM', 'AM-SSB-WC', 'AM-SSB-SC', 'AM-DSB-WC', 'AM-DSB-SC', 'FM', 'GMSK', 'OQPSK']
+in_channels: 1
+in_size: [2, 512]
+patch_size: [2, 32]
+embed_dim: 64
+num_layers: 8
+num_heads: 8
+mlp_dim: 64
+output_dim: 64
+classifier_type: patch_average
+frozen_parts: []
+batch_size: 128
+max_epochs: 100
+use_gpu: auto
+gpu_num: 0
+pretrained_path: pretrained/model_model_pretrain_all_new_config_run1.pth
+w_classification: 1
+w_reconstruction: 0
+w_contrastive: 0
+contrastive_temperature: 0.09
+selftraining_confidence_threshold: 0.8
+pseudo_label_weight: 0.5
+ema_decay: 0.9999
+Aug_prob: 1
+Aug_type: one
+augmentation: {'weak': ['gaussian_noise', 'scale'], 'full': ['gaussian_noise', 'scale', 'rotate', 'flip_horizontal', 'flip_vertical', 'time_warp', 'magnitude_warp']}
+-------------------------------------------------------------------------------
+
+
+🧪 Training 1: with hyperparameters: {'lr': 0.001, 'lr_gamma': 0.9, 'step_size': 15, 'weight_decay': 0.0, 'dropout': 0.2, 'optimizer': 'Adam'} **********
+[Shuffle & Restart] Splits set: train=192348, val=27478, test=54958
+📦 Original Dataset Size: (320000, 512, 2)
+📦 Used Data Length (from config): 300000
+🧪 Split Summary:
+   - Train Samples: 192348
+   - Val Samples:   27478
+   - Test Samples:  54958
+📝 Labeled vs Unlabeled per split:
+   - Train: 19191 labeled | 173157 unlabeled
+   - Val:   2800 labeled | 24678 unlabeled
+   - Test:  5487 labeled | 49471 unlabeled
+-----------------------------
+IQ min: I = -3.2635, Q = -3.3172
+IQ max: I = 3.3755, Q = 3.4937
+SNR range: [0] to [22]
+
+📊 Class distribution:
+  BPSK: 17173 samples
+  QPSK: 17110 samples
+  8PSK: 17198 samples
+  16APSK: 17155 samples
+  32APSK: 17131 samples
+  64APSK: 17205 samples
+  128APSK: 17225 samples
+  16QAM: 17160 samples
+  32QAM: 17194 samples
+  64QAM: 17264 samples
+  128QAM: 17164 samples
+  256QAM: 17184 samples
+  AM-DSB-SC: 17140 samples
+  AM-DSB-WC: 17088 samples
+  FM: 17128 samples
+  GMSK: 17265 samples
+
+📶 SNR distribution:
+  SNR 0: 25176 samples
+  SNR 2: 24998 samples
+  SNR 4: 24966 samples
+  SNR 6: 24921 samples
+  SNR 8: 24980 samples
+  SNR 10: 24834 samples
+  SNR 12: 24806 samples
+  SNR 14: 24990 samples
+  SNR 16: 25031 samples
+  SNR 18: 24994 samples
+  SNR 20: 25088 samples
+⏱️ Starting training...
+🚀 Start training Vit
+Epoch 1/100, memory allocated: 17117.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [1/100] — Train Acc: 38.55%, Loss: 1.5709, CLS: 1.5709, REC: 175.1402, CONTR: 4.1881
+
+📊 Validation Summary
+  Accuracy:              39.60%
+  Avg Total Loss:        1.5236
+  Classification Loss:   1.5236
+  Reconstruction Loss:   212.4078
+  Contrastive Loss:      3.9176
+
+📌 Per-Class Accuracy:
+  BPSK           : 99.82%
+  QPSK           : 1.71%
+  8PSK           : 93.73%
+  16APSK         : 45.77%
+  32APSK         : 25.13%
+  64APSK         : 0.00%
+  128APSK        : 0.00%
+  16QAM          : 0.23%
+  32QAM          : 39.22%
+  64QAM          : 34.90%
+  128QAM         : 0.00%
+  256QAM         : 0.06%
+  AM-DSB-SC      : 99.48%
+  AM-DSB-WC      : 0.00%
+  FM             : 100.00%
+  GMSK           : 93.59%
+
+💾 Saved new best model @ val_loss=1.523566 -> results/model_fine_on_reconstruction_contrastive_XXX_10/last_good_model1.pth
+⏱️ Epoch [1] took 307.42 seconds
+Epoch 2/100, memory allocated: 68464.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [2/100] — Train Acc: 44.76%, Loss: 1.3390, CLS: 1.3390, REC: 243.1702, CONTR: 3.9342
+💾 Saved new best model @ val_loss=1.416177 -> results/model_fine_on_reconstruction_contrastive_XXX_10/last_good_model1.pth
+⏱️ Epoch [2] took 306.13 seconds
+Epoch 3/100, memory allocated: 68464.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [3/100] — Train Acc: 46.13%, Loss: 1.2857, CLS: 1.2857, REC: 268.8282, CONTR: 3.8784
+💾 Saved new best model @ val_loss=1.365743 -> results/model_fine_on_reconstruction_contrastive_XXX_10/last_good_model1.pth
+⏱️ Epoch [3] took 305.57 seconds
+Epoch 4/100, memory allocated: 68465.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [4/100] — Train Acc: 46.85%, Loss: 1.2685, CLS: 1.2685, REC: 277.5044, CONTR: 3.8092
+⏱️ Epoch [4] took 305.27 seconds
+Epoch 5/100, memory allocated: 68465.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [5/100] — Train Acc: 47.94%, Loss: 1.2483, CLS: 1.2483, REC: 282.7783, CONTR: 3.7787
+💾 Saved new best model @ val_loss=1.334269 -> results/model_fine_on_reconstruction_contrastive_XXX_10/last_good_model1.pth
+⏱️ Epoch [5] took 305.35 seconds
+Epoch 6/100, memory allocated: 68466.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [6/100] — Train Acc: 48.76%, Loss: 1.2224, CLS: 1.2224, REC: 295.7639, CONTR: 3.7240
+⏱️ Epoch [6] took 305.40 seconds
+Epoch 7/100, memory allocated: 68466.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [7/100] — Train Acc: 49.24%, Loss: 1.2162, CLS: 1.2162, REC: 307.6404, CONTR: 3.6790
+💾 Saved new best model @ val_loss=1.321854 -> results/model_fine_on_reconstruction_contrastive_XXX_10/last_good_model1.pth
+⏱️ Epoch [7] took 305.60 seconds
+Epoch 8/100, memory allocated: 68467.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [8/100] — Train Acc: 50.23%, Loss: 1.1947, CLS: 1.1947, REC: 327.4965, CONTR: 3.6278
+💾 Saved new best model @ val_loss=1.292685 -> results/model_fine_on_reconstruction_contrastive_XXX_10/last_good_model1.pth
+⏱️ Epoch [8] took 305.38 seconds
+Epoch 9/100, memory allocated: 68467.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [9/100] — Train Acc: 51.49%, Loss: 1.1762, CLS: 1.1762, REC: 331.3268, CONTR: 3.5904
+💾 Saved new best model @ val_loss=1.228349 -> results/model_fine_on_reconstruction_contrastive_XXX_10/last_good_model1.pth
+⏱️ Epoch [9] took 305.42 seconds
+Epoch 10/100, memory allocated: 68468.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [10/100] — Train Acc: 52.56%, Loss: 1.1543, CLS: 1.1543, REC: 342.2558, CONTR: 3.5248
+💾 Saved new best model @ val_loss=1.174401 -> results/model_fine_on_reconstruction_contrastive_XXX_10/last_good_model1.pth
+⏱️ Epoch [10] took 305.35 seconds
+Epoch 11/100, memory allocated: 68468.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [11/100] — Train Acc: 53.35%, Loss: 1.1388, CLS: 1.1388, REC: 352.4544, CONTR: 3.4984
+
+📊 Validation Summary
+  Accuracy:              53.66%
+  Avg Total Loss:        1.2555
+  Classification Loss:   1.2555
+  Reconstruction Loss:   365.9402
+  Contrastive Loss:      3.3926
+
+📌 Per-Class Accuracy:
+  BPSK           : 99.00%
+  QPSK           : 72.45%
+  8PSK           : 91.89%
+  16APSK         : 75.54%
+  32APSK         : 56.25%
+  64APSK         : 23.80%
+  128APSK        : 24.22%
+  16QAM          : 41.73%
+  32QAM          : 15.91%
+  64QAM          : 16.32%
+  128QAM         : 15.99%
+  256QAM         : 28.72%
+  AM-DSB-SC      : 7.10%
+  AM-DSB-WC      : 94.04%
+  FM             : 100.00%
+  GMSK           : 99.71%
+
+⏱️ Epoch [11] took 305.17 seconds
+Epoch 12/100, memory allocated: 68469.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [12/100] — Train Acc: 53.68%, Loss: 1.1218, CLS: 1.1218, REC: 367.6730, CONTR: 3.4664
+⏱️ Epoch [12] took 305.15 seconds
+Epoch 13/100, memory allocated: 68469.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [13/100] — Train Acc: 54.50%, Loss: 1.0979, CLS: 1.0979, REC: 392.5682, CONTR: 3.4261
+💾 Saved new best model @ val_loss=1.068012 -> results/model_fine_on_reconstruction_contrastive_XXX_10/last_good_model1.pth
+⏱️ Epoch [13] took 305.25 seconds
+Epoch 14/100, memory allocated: 68470.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [14/100] — Train Acc: 54.89%, Loss: 1.0868, CLS: 1.0868, REC: 398.1008, CONTR: 3.4403
+⏱️ Epoch [14] took 305.22 seconds
+Epoch 15/100, memory allocated: 68470.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [15/100] — Train Acc: 54.93%, Loss: 1.0789, CLS: 1.0789, REC: 399.0672, CONTR: 3.4311
+⏱️ Epoch [15] took 304.97 seconds
+Epoch 16/100, memory allocated: 68471.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [16/100] — Train Acc: 56.14%, Loss: 1.0464, CLS: 1.0464, REC: 416.1594, CONTR: 3.3797
+💾 Saved new best model @ val_loss=1.038925 -> results/model_fine_on_reconstruction_contrastive_XXX_10/last_good_model1.pth
+⏱️ Epoch [16] took 305.31 seconds
+Epoch 17/100, memory allocated: 68471.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [17/100] — Train Acc: 56.85%, Loss: 1.0239, CLS: 1.0239, REC: 421.9788, CONTR: 3.3366
+⏱️ Epoch [17] took 339.69 seconds
+Epoch 18/100, memory allocated: 68472.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [18/100] — Train Acc: 57.17%, Loss: 1.0159, CLS: 1.0159, REC: 428.2271, CONTR: 3.3231
+⏱️ Epoch [18] took 305.44 seconds
+Epoch 19/100, memory allocated: 68472.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [19/100] — Train Acc: 57.39%, Loss: 1.0038, CLS: 1.0038, REC: 432.4710, CONTR: 3.3089
+⏱️ Epoch [19] took 305.22 seconds
+Epoch 20/100, memory allocated: 68473.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [20/100] — Train Acc: 57.65%, Loss: 1.0047, CLS: 1.0047, REC: 432.2946, CONTR: 3.2815
+💾 Saved new best model @ val_loss=1.030993 -> results/model_fine_on_reconstruction_contrastive_XXX_10/last_good_model1.pth
+⏱️ Epoch [20] took 305.69 seconds
+Epoch 21/100, memory allocated: 68473.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [21/100] — Train Acc: 58.18%, Loss: 0.9815, CLS: 0.9815, REC: 451.7651, CONTR: 3.2624
+
+📊 Validation Summary
+  Accuracy:              59.89%
+  Avg Total Loss:        0.9918
+  Classification Loss:   0.9918
+  Reconstruction Loss:   442.3939
+  Contrastive Loss:      3.2452
+
+📌 Per-Class Accuracy:
+  BPSK           : 100.00%
+  QPSK           : 95.00%
+  8PSK           : 76.63%
+  16APSK         : 74.78%
+  32APSK         : 76.69%
+  64APSK         : 38.73%
+  128APSK        : 58.95%
+  16QAM          : 49.91%
+  32QAM          : 26.68%
+  64QAM          : 11.35%
+  128QAM         : 17.99%
+  256QAM         : 24.64%
+  AM-DSB-SC      : 42.84%
+  AM-DSB-WC      : 69.33%
+  FM             : 100.00%
+  GMSK           : 99.18%
+
+💾 Saved new best model @ val_loss=0.991752 -> results/model_fine_on_reconstruction_contrastive_XXX_10/last_good_model1.pth
+⏱️ Epoch [21] took 305.33 seconds
+Epoch 22/100, memory allocated: 68474.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [22/100] — Train Acc: 58.95%, Loss: 0.9562, CLS: 0.9562, REC: 469.9646, CONTR: 3.2700
+⏱️ Epoch [22] took 305.41 seconds
+Epoch 23/100, memory allocated: 68474.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [23/100] — Train Acc: 59.06%, Loss: 0.9638, CLS: 0.9638, REC: 472.3203, CONTR: 3.2618
+⏱️ Epoch [23] took 305.17 seconds
+Epoch 24/100, memory allocated: 68475.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [24/100] — Train Acc: 59.70%, Loss: 0.9500, CLS: 0.9500, REC: 476.8161, CONTR: 3.2226
+⏱️ Epoch [24] took 305.19 seconds
+Epoch 25/100, memory allocated: 68475.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [25/100] — Train Acc: 60.14%, Loss: 0.9454, CLS: 0.9454, REC: 478.4059, CONTR: 3.2164
+💾 Saved new best model @ val_loss=0.977461 -> results/model_fine_on_reconstruction_contrastive_XXX_10/last_good_model1.pth
+⏱️ Epoch [25] took 305.48 seconds
+Epoch 26/100, memory allocated: 68476.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [26/100] — Train Acc: 60.34%, Loss: 0.9351, CLS: 0.9351, REC: 483.4732, CONTR: 3.1673
+💾 Saved new best model @ val_loss=0.975133 -> results/model_fine_on_reconstruction_contrastive_XXX_10/last_good_model1.pth
+⏱️ Epoch [26] took 305.38 seconds
+Epoch 27/100, memory allocated: 68476.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [27/100] — Train Acc: 60.54%, Loss: 0.9208, CLS: 0.9208, REC: 510.9526, CONTR: 3.1766
+⏱️ Epoch [27] took 305.31 seconds
+Epoch 28/100, memory allocated: 68477.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [28/100] — Train Acc: 60.88%, Loss: 0.9307, CLS: 0.9307, REC: 503.3174, CONTR: 3.1687
+⏱️ Epoch [28] took 305.43 seconds
+Epoch 29/100, memory allocated: 68477.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [29/100] — Train Acc: 61.48%, Loss: 0.9034, CLS: 0.9034, REC: 515.8267, CONTR: 3.1497
+⏱️ Epoch [29] took 305.37 seconds
+Epoch 30/100, memory allocated: 68478.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [30/100] — Train Acc: 61.65%, Loss: 0.9043, CLS: 0.9043, REC: 531.7399, CONTR: 3.1247
+⏱️ Epoch [30] took 305.37 seconds
+Epoch 31/100, memory allocated: 68478.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [31/100] — Train Acc: 62.26%, Loss: 0.8821, CLS: 0.8821, REC: 545.3493, CONTR: 3.1059
+
+📊 Validation Summary
+  Accuracy:              62.24%
+  Avg Total Loss:        0.9320
+  Classification Loss:   0.9320
+  Reconstruction Loss:   524.6243
+  Contrastive Loss:      2.9396
+
+📌 Per-Class Accuracy:
+  BPSK           : 99.94%
+  QPSK           : 89.58%
+  8PSK           : 90.89%
+  16APSK         : 90.25%
+  32APSK         : 78.98%
+  64APSK         : 32.00%
+  128APSK        : 39.14%
+  16QAM          : 68.12%
+  32QAM          : 52.00%
+  64QAM          : 15.58%
+  128QAM         : 11.36%
+  256QAM         : 31.52%
+  AM-DSB-SC      : 7.50%
+  AM-DSB-WC      : 92.93%
+  FM             : 100.00%
+  GMSK           : 99.88%
+
+💾 Saved new best model @ val_loss=0.932049 -> results/model_fine_on_reconstruction_contrastive_XXX_10/last_good_model1.pth
+⏱️ Epoch [31] took 305.31 seconds
+Epoch 32/100, memory allocated: 68479.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [32/100] — Train Acc: 62.56%, Loss: 0.8724, CLS: 0.8724, REC: 537.1947, CONTR: 3.0840
+⏱️ Epoch [32] took 305.27 seconds
+Epoch 33/100, memory allocated: 68479.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [33/100] — Train Acc: 62.64%, Loss: 0.8592, CLS: 0.8592, REC: 558.5594, CONTR: 3.0791
+💾 Saved new best model @ val_loss=0.869307 -> results/model_fine_on_reconstruction_contrastive_XXX_10/last_good_model1.pth
+⏱️ Epoch [33] took 305.52 seconds
+Epoch 34/100, memory allocated: 68480.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [34/100] — Train Acc: 62.67%, Loss: 0.8521, CLS: 0.8521, REC: 556.0490, CONTR: 3.0641
+⏱️ Epoch [34] took 305.30 seconds
+Epoch 35/100, memory allocated: 68480.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [35/100] — Train Acc: 62.75%, Loss: 0.8511, CLS: 0.8511, REC: 559.4915, CONTR: 3.0426
+⏱️ Epoch [35] took 305.16 seconds
+Epoch 36/100, memory allocated: 68481.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [36/100] — Train Acc: 63.38%, Loss: 0.8417, CLS: 0.8417, REC: 573.2194, CONTR: 3.0237
+⏱️ Epoch [36] took 305.36 seconds
+Epoch 37/100, memory allocated: 68481.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [37/100] — Train Acc: 63.32%, Loss: 0.8313, CLS: 0.8313, REC: 562.2556, CONTR: 3.0122
+⏱️ Epoch [37] took 306.06 seconds
+Epoch 38/100, memory allocated: 68482.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [38/100] — Train Acc: 63.29%, Loss: 0.8279, CLS: 0.8279, REC: 568.8312, CONTR: 3.0155
+⏱️ Epoch [38] took 304.91 seconds
+Epoch 39/100, memory allocated: 68482.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [39/100] — Train Acc: 63.42%, Loss: 0.8163, CLS: 0.8163, REC: 578.3146, CONTR: 3.0285
+⏱️ Epoch [39] took 305.30 seconds
+Epoch 40/100, memory allocated: 68483.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [40/100] — Train Acc: 63.33%, Loss: 0.8260, CLS: 0.8260, REC: 590.3489, CONTR: 2.9859
+⏱️ Epoch [40] took 305.20 seconds
+Epoch 41/100, memory allocated: 68483.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [41/100] — Train Acc: 63.78%, Loss: 0.8088, CLS: 0.8088, REC: 597.7342, CONTR: 2.9651
+
+📊 Validation Summary
+  Accuracy:              61.44%
+  Avg Total Loss:        0.9942
+  Classification Loss:   0.9942
+  Reconstruction Loss:   564.9207
+  Contrastive Loss:      2.8484
+
+📌 Per-Class Accuracy:
+  BPSK           : 100.00%
+  QPSK           : 96.00%
+  8PSK           : 94.14%
+  16APSK         : 85.23%
+  32APSK         : 72.05%
+  64APSK         : 23.91%
+  128APSK        : 34.43%
+  16QAM          : 65.94%
+  32QAM          : 40.82%
+  64QAM          : 5.82%
+  128QAM         : 35.64%
+  256QAM         : 32.87%
+  AM-DSB-SC      : 30.01%
+  AM-DSB-WC      : 69.92%
+  FM             : 100.00%
+  GMSK           : 99.65%
+
+⏱️ Epoch [41] took 305.31 seconds
+Epoch 42/100, memory allocated: 68484.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [42/100] — Train Acc: 63.99%, Loss: 0.8069, CLS: 0.8069, REC: 598.8134, CONTR: 2.9949
+💾 Saved new best model @ val_loss=0.868271 -> results/model_fine_on_reconstruction_contrastive_XXX_10/last_good_model1.pth
+⏱️ Epoch [42] took 305.47 seconds
+Epoch 43/100, memory allocated: 68484.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [43/100] — Train Acc: 63.98%, Loss: 0.7985, CLS: 0.7985, REC: 612.7087, CONTR: 2.9805
+💾 Saved new best model @ val_loss=0.857210 -> results/model_fine_on_reconstruction_contrastive_XXX_10/last_good_model1.pth
+⏱️ Epoch [43] took 305.33 seconds
+Epoch 44/100, memory allocated: 68485.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [44/100] — Train Acc: 64.34%, Loss: 0.7852, CLS: 0.7852, REC: 621.9760, CONTR: 2.9719
+⏱️ Epoch [44] took 305.11 seconds
+Epoch 45/100, memory allocated: 68485.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [45/100] — Train Acc: 64.05%, Loss: 0.7915, CLS: 0.7915, REC: 613.8907, CONTR: 2.9553
+⏱️ Epoch [45] took 305.27 seconds
+Epoch 46/100, memory allocated: 68486.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [46/100] — Train Acc: 64.78%, Loss: 0.7607, CLS: 0.7607, REC: 636.0883, CONTR: 2.9015
+💾 Saved new best model @ val_loss=0.831396 -> results/model_fine_on_reconstruction_contrastive_XXX_10/last_good_model1.pth
+⏱️ Epoch [46] took 305.30 seconds
+Epoch 47/100, memory allocated: 68486.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [47/100] — Train Acc: 64.96%, Loss: 0.7624, CLS: 0.7624, REC: 640.0293, CONTR: 2.8841
+⏱️ Epoch [47] took 305.38 seconds
+Epoch 48/100, memory allocated: 68487.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [48/100] — Train Acc: 65.05%, Loss: 0.7514, CLS: 0.7514, REC: 654.0767, CONTR: 2.9023
+⏱️ Epoch [48] took 305.23 seconds
+Epoch 49/100, memory allocated: 68487.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [49/100] — Train Acc: 65.09%, Loss: 0.7289, CLS: 0.7289, REC: 666.9896, CONTR: 2.9171
+⏱️ Epoch [49] took 305.12 seconds
+Epoch 50/100, memory allocated: 68488.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [50/100] — Train Acc: 65.04%, Loss: 0.7440, CLS: 0.7440, REC: 656.6758, CONTR: 2.8833
+💾 Saved new best model @ val_loss=0.816545 -> results/model_fine_on_reconstruction_contrastive_XXX_10/last_good_model1.pth
+⏱️ Epoch [50] took 305.40 seconds
+Epoch 51/100, memory allocated: 68488.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [51/100] — Train Acc: 65.03%, Loss: 0.7430, CLS: 0.7430, REC: 666.1348, CONTR: 2.8800
+
+📊 Validation Summary
+  Accuracy:              65.34%
+  Avg Total Loss:        0.8808
+  Classification Loss:   0.8808
+  Reconstruction Loss:   678.4175
+  Contrastive Loss:      2.8381
+
+📌 Per-Class Accuracy:
+  BPSK           : 99.94%
+  QPSK           : 91.47%
+  8PSK           : 97.34%
+  16APSK         : 82.25%
+  32APSK         : 68.76%
+  64APSK         : 46.52%
+  128APSK        : 36.93%
+  16QAM          : 76.02%
+  32QAM          : 54.10%
+  64QAM          : 34.95%
+  128QAM         : 26.27%
+  256QAM         : 29.60%
+  AM-DSB-SC      : 26.35%
+  AM-DSB-WC      : 77.75%
+  FM             : 100.00%
+  GMSK           : 99.88%
+
+⏱️ Epoch [51] took 305.25 seconds
+Epoch 52/100, memory allocated: 68489.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [52/100] — Train Acc: 65.50%, Loss: 0.7285, CLS: 0.7285, REC: 668.5376, CONTR: 2.8803
+⏱️ Epoch [52] took 305.10 seconds
+Epoch 53/100, memory allocated: 68489.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [53/100] — Train Acc: 65.42%, Loss: 0.7106, CLS: 0.7106, REC: 677.9407, CONTR: 2.8489
+⏱️ Epoch [53] took 305.13 seconds
+Epoch 54/100, memory allocated: 68490.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [54/100] — Train Acc: 65.60%, Loss: 0.7102, CLS: 0.7102, REC: 695.8331, CONTR: 2.8290
+⏱️ Epoch [54] took 305.04 seconds
+Epoch 55/100, memory allocated: 68490.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [55/100] — Train Acc: 65.66%, Loss: 0.6983, CLS: 0.6983, REC: 719.7793, CONTR: 2.8197
+⏱️ Epoch [55] took 305.06 seconds
+Epoch 56/100, memory allocated: 68491.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [56/100] — Train Acc: 65.47%, Loss: 0.6912, CLS: 0.6912, REC: 734.4426, CONTR: 2.8115
+⏱️ Epoch [56] took 305.20 seconds
+Epoch 57/100, memory allocated: 68491.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [57/100] — Train Acc: 65.48%, Loss: 0.6931, CLS: 0.6931, REC: 740.7578, CONTR: 2.7984
+⏱️ Epoch [57] took 305.29 seconds
+Epoch 58/100, memory allocated: 68492.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [58/100] — Train Acc: 65.62%, Loss: 0.6808, CLS: 0.6808, REC: 734.7810, CONTR: 2.7979
+⏱️ Epoch [58] took 305.18 seconds
+Epoch 59/100, memory allocated: 68492.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [59/100] — Train Acc: 65.67%, Loss: 0.6838, CLS: 0.6838, REC: 733.9551, CONTR: 2.7907
+⏱️ Epoch [59] took 305.14 seconds
+Epoch 60/100, memory allocated: 68493.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [60/100] — Train Acc: 65.55%, Loss: 0.6873, CLS: 0.6873, REC: 736.8190, CONTR: 2.7900
+⏱️ Epoch [60] took 305.44 seconds
+Epoch 61/100, memory allocated: 68493.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [61/100] — Train Acc: 66.16%, Loss: 0.6611, CLS: 0.6611, REC: 754.7202, CONTR: 2.7834
+
+📊 Validation Summary
+  Accuracy:              66.26%
+  Avg Total Loss:        0.9342
+  Classification Loss:   0.9342
+  Reconstruction Loss:   732.5085
+  Contrastive Loss:      2.5621
+
+📌 Per-Class Accuracy:
+  BPSK           : 100.00%
+  QPSK           : 97.59%
+  8PSK           : 92.37%
+  16APSK         : 90.02%
+  32APSK         : 78.21%
+  64APSK         : 66.09%
+  128APSK        : 25.84%
+  16QAM          : 77.96%
+  32QAM          : 54.33%
+  64QAM          : 17.62%
+  128QAM         : 19.30%
+  256QAM         : 24.28%
+  AM-DSB-SC      : 75.43%
+  AM-DSB-WC      : 43.87%
+  FM             : 100.00%
+  GMSK           : 99.88%
+
+⏱️ Epoch [61] took 305.36 seconds
+Epoch 62/100, memory allocated: 68494.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [62/100] — Train Acc: 65.97%, Loss: 0.6453, CLS: 0.6453, REC: 779.3612, CONTR: 2.7712
+⏱️ Epoch [62] took 305.30 seconds
+Epoch 63/100, memory allocated: 68494.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [63/100] — Train Acc: 66.07%, Loss: 0.6353, CLS: 0.6353, REC: 785.1505, CONTR: 2.7559
+⏱️ Epoch [63] took 305.25 seconds
+Epoch 64/100, memory allocated: 68495.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [64/100] — Train Acc: 66.49%, Loss: 0.6301, CLS: 0.6301, REC: 813.5632, CONTR: 2.7148
+⏱️ Epoch [64] took 305.33 seconds
+Epoch 65/100, memory allocated: 68495.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [65/100] — Train Acc: 66.27%, Loss: 0.6275, CLS: 0.6275, REC: 803.2145, CONTR: 2.6914
+⏱️ Epoch [65] took 305.27 seconds
+Epoch 66/100, memory allocated: 68496.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [66/100] — Train Acc: 66.31%, Loss: 0.6110, CLS: 0.6110, REC: 807.2178, CONTR: 2.6871
+⏱️ Epoch [66] took 305.03 seconds
+Epoch 67/100, memory allocated: 68496.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [67/100] — Train Acc: 66.56%, Loss: 0.5995, CLS: 0.5995, REC: 825.0387, CONTR: 2.6720
+⏱️ Epoch [67] took 305.12 seconds
+Epoch 68/100, memory allocated: 68497.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [68/100] — Train Acc: 66.37%, Loss: 0.6032, CLS: 0.6032, REC: 843.7086, CONTR: 2.6934
+⏱️ Epoch [68] took 305.51 seconds
+Epoch 69/100, memory allocated: 68497.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [69/100] — Train Acc: 66.59%, Loss: 0.5969, CLS: 0.5969, REC: 849.9774, CONTR: 2.6423
+⏱️ Epoch [69] took 305.22 seconds
+Epoch 70/100, memory allocated: 68498.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [70/100] — Train Acc: 66.63%, Loss: 0.5880, CLS: 0.5880, REC: 858.0424, CONTR: 2.6636
+⏱️ Epoch [70] took 305.19 seconds
+Epoch 71/100, memory allocated: 68498.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [71/100] — Train Acc: 66.60%, Loss: 0.5789, CLS: 0.5789, REC: 876.1060, CONTR: 2.6485
+
+📊 Validation Summary
+  Accuracy:              65.32%
+  Avg Total Loss:        0.9708
+  Classification Loss:   0.9708
+  Reconstruction Loss:   836.6093
+  Contrastive Loss:      2.4895
+
+📌 Per-Class Accuracy:
+  BPSK           : 100.00%
+  QPSK           : 96.88%
+  8PSK           : 95.27%
+  16APSK         : 86.28%
+  32APSK         : 75.22%
+  64APSK         : 47.77%
+  128APSK        : 48.99%
+  16QAM          : 72.87%
+  32QAM          : 45.27%
+  64QAM          : 14.06%
+  128QAM         : 25.47%
+  256QAM         : 46.23%
+  AM-DSB-SC      : 16.44%
+  AM-DSB-WC      : 78.91%
+  FM             : 100.00%
+  GMSK           : 99.83%
+
+⏱️ Epoch [71] took 305.36 seconds
+Epoch 72/100, memory allocated: 68499.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [72/100] — Train Acc: 66.40%, Loss: 0.5860, CLS: 0.5860, REC: 867.1119, CONTR: 2.6344
+⏱️ Epoch [72] took 305.21 seconds
+Epoch 73/100, memory allocated: 68499.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [73/100] — Train Acc: 66.70%, Loss: 0.5736, CLS: 0.5736, REC: 856.6717, CONTR: 2.6304
+⏱️ Epoch [73] took 305.08 seconds
+Epoch 74/100, memory allocated: 68500.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [74/100] — Train Acc: 66.53%, Loss: 0.5762, CLS: 0.5762, REC: 865.2111, CONTR: 2.5933
+⏱️ Epoch [74] took 305.38 seconds
+Epoch 75/100, memory allocated: 68500.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [75/100] — Train Acc: 66.68%, Loss: 0.5673, CLS: 0.5673, REC: 891.1713, CONTR: 2.5845
+⏱️ Epoch [75] took 305.32 seconds
+Epoch 76/100, memory allocated: 68501.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [76/100] — Train Acc: 66.91%, Loss: 0.5375, CLS: 0.5375, REC: 910.8709, CONTR: 2.5655
+⏱️ Epoch [76] took 305.44 seconds
+Epoch 77/100, memory allocated: 68501.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [77/100] — Train Acc: 67.06%, Loss: 0.5200, CLS: 0.5200, REC: 941.5269, CONTR: 2.5703
+⏱️ Epoch [77] took 305.32 seconds
+Epoch 78/100, memory allocated: 68502.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [78/100] — Train Acc: 67.02%, Loss: 0.5164, CLS: 0.5164, REC: 942.6554, CONTR: 2.5604
+⏱️ Epoch [78] took 305.23 seconds
+Epoch 79/100, memory allocated: 68502.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [79/100] — Train Acc: 67.02%, Loss: 0.5080, CLS: 0.5080, REC: 949.8963, CONTR: 2.5140
+⏱️ Epoch [79] took 305.24 seconds
+Epoch 80/100, memory allocated: 68503.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [80/100] — Train Acc: 67.13%, Loss: 0.4970, CLS: 0.4970, REC: 971.4918, CONTR: 2.4935
+⏱️ Epoch [80] took 305.29 seconds
+Epoch 81/100, memory allocated: 68503.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [81/100] — Train Acc: 67.07%, Loss: 0.5000, CLS: 0.5000, REC: 969.4572, CONTR: 2.4948
+
+📊 Validation Summary
+  Accuracy:              66.11%
+  Avg Total Loss:        1.0948
+  Classification Loss:   1.0948
+  Reconstruction Loss:   1029.0927
+  Contrastive Loss:      2.4392
+
+📌 Per-Class Accuracy:
+  BPSK           : 100.00%
+  QPSK           : 97.35%
+  8PSK           : 94.73%
+  16APSK         : 88.21%
+  32APSK         : 81.74%
+  64APSK         : 67.76%
+  128APSK        : 43.44%
+  16QAM          : 66.34%
+  32QAM          : 55.02%
+  64QAM          : 21.91%
+  128QAM         : 19.53%
+  256QAM         : 30.30%
+  AM-DSB-SC      : 8.88%
+  AM-DSB-WC      : 87.09%
+  FM             : 100.00%
+  GMSK           : 99.94%
+
+⏱️ Epoch [81] took 305.13 seconds
+Epoch 82/100, memory allocated: 68504.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [82/100] — Train Acc: 66.93%, Loss: 0.4900, CLS: 0.4900, REC: 984.9160, CONTR: 2.5142
+⏱️ Epoch [82] took 305.15 seconds
+Epoch 83/100, memory allocated: 68504.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [83/100] — Train Acc: 67.18%, Loss: 0.4725, CLS: 0.4725, REC: 1008.2997, CONTR: 2.5144
+⏱️ Epoch [83] took 305.00 seconds
+Epoch 84/100, memory allocated: 68505.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [84/100] — Train Acc: 67.03%, Loss: 0.4718, CLS: 0.4718, REC: 1034.4390, CONTR: 2.4842
+⏱️ Epoch [84] took 305.24 seconds
+Epoch 85/100, memory allocated: 68505.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [85/100] — Train Acc: 67.02%, Loss: 0.4700, CLS: 0.4700, REC: 1037.8884, CONTR: 2.5000
+⏱️ Epoch [85] took 305.17 seconds
+Epoch 86/100, memory allocated: 68506.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [86/100] — Train Acc: 66.83%, Loss: 0.4702, CLS: 0.4702, REC: 1046.1966, CONTR: 2.4920
+⏱️ Epoch [86] took 305.32 seconds
+Epoch 87/100, memory allocated: 68506.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [87/100] — Train Acc: 67.25%, Loss: 0.4536, CLS: 0.4536, REC: 1066.1925, CONTR: 2.4649
+⏱️ Epoch [87] took 305.08 seconds
+Epoch 88/100, memory allocated: 68507.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [88/100] — Train Acc: 67.14%, Loss: 0.4659, CLS: 0.4659, REC: 1051.6558, CONTR: 2.4649
+⏱️ Epoch [88] took 305.24 seconds
+Epoch 89/100, memory allocated: 68507.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [89/100] — Train Acc: 67.20%, Loss: 0.4486, CLS: 0.4486, REC: 1079.5818, CONTR: 2.4475
+⏱️ Epoch [89] took 305.34 seconds
+Epoch 90/100, memory allocated: 68508.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [90/100] — Train Acc: 67.15%, Loss: 0.4505, CLS: 0.4505, REC: 1063.0292, CONTR: 2.4609
+⏱️ Epoch [90] took 305.05 seconds
+Epoch 91/100, memory allocated: 68508.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [91/100] — Train Acc: 67.26%, Loss: 0.4225, CLS: 0.4225, REC: 1100.6789, CONTR: 2.4350
+
+📊 Validation Summary
+  Accuracy:              67.42%
+  Avg Total Loss:        1.0999
+  Classification Loss:   1.0999
+  Reconstruction Loss:   1141.2268
+  Contrastive Loss:      2.2403
+
+📌 Per-Class Accuracy:
+  BPSK           : 100.00%
+  QPSK           : 97.35%
+  8PSK           : 93.55%
+  16APSK         : 88.32%
+  32APSK         : 79.80%
+  64APSK         : 41.94%
+  128APSK        : 52.68%
+  16QAM          : 72.81%
+  32QAM          : 57.87%
+  64QAM          : 19.03%
+  128QAM         : 28.27%
+  256QAM         : 42.97%
+  AM-DSB-SC      : 31.39%
+  AM-DSB-WC      : 76.52%
+  FM             : 100.00%
+  GMSK           : 99.77%
+
+⏱️ Epoch [91] took 305.05 seconds
+Epoch 92/100, memory allocated: 68509.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [92/100] — Train Acc: 67.46%, Loss: 0.4173, CLS: 0.4173, REC: 1133.8244, CONTR: 2.4307
+⏱️ Epoch [92] took 305.28 seconds
+Epoch 93/100, memory allocated: 68509.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [93/100] — Train Acc: 67.53%, Loss: 0.4104, CLS: 0.4104, REC: 1135.7412, CONTR: 2.4238
+⏱️ Epoch [93] took 305.14 seconds
+Epoch 94/100, memory allocated: 68510.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [94/100] — Train Acc: 67.29%, Loss: 0.4085, CLS: 0.4085, REC: 1125.7638, CONTR: 2.4336
+⏱️ Epoch [94] took 305.06 seconds
+Epoch 95/100, memory allocated: 68510.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [95/100] — Train Acc: 67.59%, Loss: 0.4010, CLS: 0.4010, REC: 1122.5564, CONTR: 2.3892
+⏱️ Epoch [95] took 305.17 seconds
+Epoch 96/100, memory allocated: 68511.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [96/100] — Train Acc: 67.36%, Loss: 0.3987, CLS: 0.3987, REC: 1149.4764, CONTR: 2.3758
+⏱️ Epoch [96] took 305.08 seconds
+Epoch 97/100, memory allocated: 68511.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [97/100] — Train Acc: 67.37%, Loss: 0.3848, CLS: 0.3848, REC: 1157.6564, CONTR: 2.4275
+⏱️ Epoch [97] took 305.41 seconds
+Epoch 98/100, memory allocated: 68512.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [98/100] — Train Acc: 67.33%, Loss: 0.3772, CLS: 0.3772, REC: 1207.4354, CONTR: 2.4258
+⏱️ Epoch [98] took 305.21 seconds
+Epoch 99/100, memory allocated: 68512.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [99/100] — Train Acc: 67.31%, Loss: 0.3779, CLS: 0.3779, REC: 1207.3716, CONTR: 2.3762
+⏱️ Epoch [99] took 305.23 seconds
+Epoch 100/100, memory allocated: 68513.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [100/100] — Train Acc: 67.25%, Loss: 0.3756, CLS: 0.3756, REC: 1236.0844, CONTR: 2.4046
+⏱️ Epoch [100] took 305.08 seconds
+✅ Training 1 completed in 510.69 minutes.
+📦 Model saved to results/model_fine_on_reconstruction_contrastive_XXX_10/model_model_fine_on_reconstruction_contrastive_XXX_10_run1.pth
+📊 Metrics saved to results/model_fine_on_reconstruction_contrastive_XXX_10/Quick_plot_1/metrics_model_fine_on_reconstruction_contrastive_XXX_10_run1.pkl
+📈 Metrics plot saved to results/model_fine_on_reconstruction_contrastive_XXX_10/Quick_plot_1/metrics_model_fine_on_reconstruction_contrastive_XXX_10_run1.pkl.pdf
+🔍 Test model 1 on test data loader set...
+
+🧪 Training 2: with hyperparameters: {'lr': 0.001, 'lr_gamma': 0.9, 'step_size': 15, 'weight_decay': 0.0, 'dropout': 0.2, 'optimizer': 'Adam'} **********
+[Shuffle & Restart] Splits set: train=192348, val=27478, test=54958
+📦 Original Dataset Size: (320000, 512, 2)
+📦 Used Data Length (from config): 300000
+🧪 Split Summary:
+   - Train Samples: 192348
+   - Val Samples:   27478
+   - Test Samples:  54958
+📝 Labeled vs Unlabeled per split:
+   - Train: 19196 labeled | 173152 unlabeled
+   - Val:   2814 labeled | 24664 unlabeled
+   - Test:  5468 labeled | 49490 unlabeled
+-----------------------------
+IQ min: I = -3.2635, Q = -3.3172
+IQ max: I = 3.3755, Q = 3.4937
+SNR range: [0] to [22]
+
+📊 Class distribution:
+  BPSK: 17173 samples
+  QPSK: 17110 samples
+  8PSK: 17198 samples
+  16APSK: 17155 samples
+  32APSK: 17131 samples
+  64APSK: 17205 samples
+  128APSK: 17225 samples
+  16QAM: 17160 samples
+  32QAM: 17194 samples
+  64QAM: 17264 samples
+  128QAM: 17164 samples
+  256QAM: 17184 samples
+  AM-DSB-SC: 17140 samples
+  AM-DSB-WC: 17088 samples
+  FM: 17128 samples
+  GMSK: 17265 samples
+
+📶 SNR distribution:
+  SNR 0: 25176 samples
+  SNR 2: 24998 samples
+  SNR 4: 24966 samples
+  SNR 6: 24921 samples
+  SNR 8: 24980 samples
+  SNR 10: 24834 samples
+  SNR 12: 24806 samples
+  SNR 14: 24990 samples
+  SNR 16: 25031 samples
+  SNR 18: 24994 samples
+  SNR 20: 25088 samples
+⏱️ Starting training...
+🚀 Start training Vit
+Epoch 1/100, memory allocated: 51399.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [1/100] — Train Acc: 39.23%, Loss: 1.5666, CLS: 1.5666, REC: 164.9254, CONTR: 4.1729
+
+📊 Validation Summary
+  Accuracy:              45.46%
+  Avg Total Loss:        1.3101
+  Classification Loss:   1.3101
+  Reconstruction Loss:   194.3704
+  Contrastive Loss:      3.9210
+
+📌 Per-Class Accuracy:
+  BPSK           : 100.00%
+  QPSK           : 16.88%
+  8PSK           : 71.13%
+  16APSK         : 83.98%
+  32APSK         : 42.00%
+  64APSK         : 21.01%
+  128APSK        : 38.05%
+  16QAM          : 10.34%
+  32QAM          : 18.32%
+  64QAM          : 16.85%
+  128QAM         : 13.13%
+  256QAM         : 1.77%
+  AM-DSB-SC      : 0.00%
+  AM-DSB-WC      : 100.00%
+  FM             : 99.70%
+  GMSK           : 98.28%
+
+💾 Saved new best model @ val_loss=1.310118 -> results/model_fine_on_reconstruction_contrastive_XXX_10/last_good_model2.pth
+⏱️ Epoch [1] took 304.88 seconds
+Epoch 2/100, memory allocated: 102746.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [2/100] — Train Acc: 44.95%, Loss: 1.3330, CLS: 1.3330, REC: 221.6771, CONTR: 3.9295
+⏱️ Epoch [2] took 305.09 seconds
+Epoch 3/100, memory allocated: 102747.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [3/100] — Train Acc: 46.30%, Loss: 1.2846, CLS: 1.2846, REC: 242.7273, CONTR: 3.8577
+⏱️ Epoch [3] took 304.82 seconds
+Epoch 4/100, memory allocated: 102747.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [4/100] — Train Acc: 46.86%, Loss: 1.2672, CLS: 1.2672, REC: 256.6430, CONTR: 3.8207
+💾 Saved new best model @ val_loss=1.300514 -> results/model_fine_on_reconstruction_contrastive_XXX_10/last_good_model2.pth
+⏱️ Epoch [4] took 305.26 seconds
+Epoch 5/100, memory allocated: 102748.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [5/100] — Train Acc: 48.11%, Loss: 1.2392, CLS: 1.2392, REC: 261.4860, CONTR: 3.7452
+⏱️ Epoch [5] took 305.11 seconds
+Epoch 6/100, memory allocated: 102748.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [6/100] — Train Acc: 48.91%, Loss: 1.2203, CLS: 1.2203, REC: 275.3037, CONTR: 3.7481
+⏱️ Epoch [6] took 305.01 seconds
+Epoch 7/100, memory allocated: 102749.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [7/100] — Train Acc: 49.18%, Loss: 1.2058, CLS: 1.2058, REC: 278.1847, CONTR: 3.6905
+💾 Saved new best model @ val_loss=1.246152 -> results/model_fine_on_reconstruction_contrastive_XXX_10/last_good_model2.pth
+⏱️ Epoch [7] took 305.22 seconds
+Epoch 8/100, memory allocated: 102749.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [8/100] — Train Acc: 50.06%, Loss: 1.1952, CLS: 1.1952, REC: 295.7125, CONTR: 3.6803
+⏱️ Epoch [8] took 304.93 seconds
+Epoch 9/100, memory allocated: 102750.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [9/100] — Train Acc: 51.40%, Loss: 1.1806, CLS: 1.1806, REC: 306.7748, CONTR: 3.6387
+💾 Saved new best model @ val_loss=1.188259 -> results/model_fine_on_reconstruction_contrastive_XXX_10/last_good_model2.pth
+⏱️ Epoch [9] took 339.47 seconds
+Epoch 10/100, memory allocated: 102750.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [10/100] — Train Acc: 53.14%, Loss: 1.1520, CLS: 1.1520, REC: 326.3231, CONTR: 3.5943
+💾 Saved new best model @ val_loss=1.086001 -> results/model_fine_on_reconstruction_contrastive_XXX_10/last_good_model2.pth
+⏱️ Epoch [10] took 305.24 seconds
+Epoch 11/100, memory allocated: 102751.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [11/100] — Train Acc: 53.87%, Loss: 1.1274, CLS: 1.1274, REC: 353.1088, CONTR: 3.5792
+
+📊 Validation Summary
+  Accuracy:              56.04%
+  Avg Total Loss:        1.1015
+  Classification Loss:   1.1015
+  Reconstruction Loss:   343.8385
+  Contrastive Loss:      3.5259
+
+📌 Per-Class Accuracy:
+  BPSK           : 100.00%
+  QPSK           : 89.65%
+  8PSK           : 63.94%
+  16APSK         : 80.99%
+  32APSK         : 70.30%
+  64APSK         : 21.88%
+  128APSK        : 28.04%
+  16QAM          : 51.06%
+  32QAM          : 34.62%
+  64QAM          : 12.01%
+  128QAM         : 16.83%
+  256QAM         : 19.82%
+  AM-DSB-SC      : 30.28%
+  AM-DSB-WC      : 80.79%
+  FM             : 100.00%
+  GMSK           : 98.74%
+
+⏱️ Epoch [11] took 305.34 seconds
+Epoch 12/100, memory allocated: 102751.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [12/100] — Train Acc: 54.92%, Loss: 1.1167, CLS: 1.1167, REC: 357.3517, CONTR: 3.5325
+⏱️ Epoch [12] took 305.40 seconds
+Epoch 13/100, memory allocated: 102752.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [13/100] — Train Acc: 55.91%, Loss: 1.0896, CLS: 1.0896, REC: 379.9834, CONTR: 3.4780
+⏱️ Epoch [13] took 305.48 seconds
+Epoch 14/100, memory allocated: 102752.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [14/100] — Train Acc: 56.53%, Loss: 1.0817, CLS: 1.0817, REC: 391.4522, CONTR: 3.4404
+⏱️ Epoch [14] took 305.10 seconds
+Epoch 15/100, memory allocated: 102753.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [15/100] — Train Acc: 56.80%, Loss: 1.0720, CLS: 1.0720, REC: 392.8055, CONTR: 3.4264
+⏱️ Epoch [15] took 305.12 seconds
+Epoch 16/100, memory allocated: 102753.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [16/100] — Train Acc: 57.53%, Loss: 1.0473, CLS: 1.0473, REC: 406.1103, CONTR: 3.4300
+💾 Saved new best model @ val_loss=1.072436 -> results/model_fine_on_reconstruction_contrastive_XXX_10/last_good_model2.pth
+⏱️ Epoch [16] took 305.40 seconds
+Epoch 17/100, memory allocated: 102754.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [17/100] — Train Acc: 58.42%, Loss: 1.0189, CLS: 1.0189, REC: 415.8221, CONTR: 3.3883
+💾 Saved new best model @ val_loss=1.002991 -> results/model_fine_on_reconstruction_contrastive_XXX_10/last_good_model2.pth
+⏱️ Epoch [17] took 305.21 seconds
+Epoch 18/100, memory allocated: 102754.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [18/100] — Train Acc: 58.64%, Loss: 1.0049, CLS: 1.0049, REC: 436.7247, CONTR: 3.3762
+⏱️ Epoch [18] took 305.46 seconds
+Epoch 19/100, memory allocated: 102755.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [19/100] — Train Acc: 58.98%, Loss: 0.9933, CLS: 0.9933, REC: 435.8526, CONTR: 3.3400
+💾 Saved new best model @ val_loss=1.002594 -> results/model_fine_on_reconstruction_contrastive_XXX_10/last_good_model2.pth
+⏱️ Epoch [19] took 305.16 seconds
+Epoch 20/100, memory allocated: 102755.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [20/100] — Train Acc: 59.59%, Loss: 0.9916, CLS: 0.9916, REC: 447.0352, CONTR: 3.3204
+⏱️ Epoch [20] took 305.18 seconds
+Epoch 21/100, memory allocated: 102756.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [21/100] — Train Acc: 59.85%, Loss: 0.9701, CLS: 0.9701, REC: 465.2701, CONTR: 3.3314
+
+📊 Validation Summary
+  Accuracy:              57.59%
+  Avg Total Loss:        1.0749
+  Classification Loss:   1.0749
+  Reconstruction Loss:   442.9706
+  Contrastive Loss:      3.1985
+
+📌 Per-Class Accuracy:
+  BPSK           : 100.00%
+  QPSK           : 94.71%
+  8PSK           : 91.22%
+  16APSK         : 89.96%
+  32APSK         : 75.98%
+  64APSK         : 36.56%
+  128APSK        : 16.93%
+  16QAM          : 64.01%
+  32QAM          : 27.40%
+  64QAM          : 11.90%
+  128QAM         : 5.49%
+  256QAM         : 14.69%
+  AM-DSB-SC      : 2.43%
+  AM-DSB-WC      : 93.87%
+  FM             : 100.00%
+  GMSK           : 100.00%
+
+⏱️ Epoch [21] took 305.20 seconds
+Epoch 22/100, memory allocated: 102756.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [22/100] — Train Acc: 60.04%, Loss: 0.9688, CLS: 0.9688, REC: 463.9169, CONTR: 3.2964
+💾 Saved new best model @ val_loss=0.939412 -> results/model_fine_on_reconstruction_contrastive_XXX_10/last_good_model2.pth
+⏱️ Epoch [22] took 305.26 seconds
+Epoch 23/100, memory allocated: 102757.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [23/100] — Train Acc: 60.46%, Loss: 0.9563, CLS: 0.9563, REC: 468.6720, CONTR: 3.2574
+⏱️ Epoch [23] took 305.23 seconds
+Epoch 24/100, memory allocated: 102757.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [24/100] — Train Acc: 60.65%, Loss: 0.9394, CLS: 0.9394, REC: 471.8846, CONTR: 3.2563
+⏱️ Epoch [24] took 304.94 seconds
+Epoch 25/100, memory allocated: 102758.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [25/100] — Train Acc: 60.78%, Loss: 0.9354, CLS: 0.9354, REC: 479.4758, CONTR: 3.2916
+⏱️ Epoch [25] took 305.14 seconds
+Epoch 26/100, memory allocated: 102758.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [26/100] — Train Acc: 61.16%, Loss: 0.9209, CLS: 0.9209, REC: 486.2531, CONTR: 3.2689
+⏱️ Epoch [26] took 305.04 seconds
+Epoch 27/100, memory allocated: 102759.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [27/100] — Train Acc: 61.21%, Loss: 0.9202, CLS: 0.9202, REC: 485.1492, CONTR: 3.2403
+💾 Saved new best model @ val_loss=0.908139 -> results/model_fine_on_reconstruction_contrastive_XXX_10/last_good_model2.pth
+⏱️ Epoch [27] took 305.44 seconds
+Epoch 28/100, memory allocated: 102759.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [28/100] — Train Acc: 61.41%, Loss: 0.9066, CLS: 0.9066, REC: 489.6256, CONTR: 3.2137
+⏱️ Epoch [28] took 305.27 seconds
+Epoch 29/100, memory allocated: 102760.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [29/100] — Train Acc: 61.37%, Loss: 0.9093, CLS: 0.9093, REC: 490.0659, CONTR: 3.1964
+⏱️ Epoch [29] took 305.19 seconds
+Epoch 30/100, memory allocated: 102760.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [30/100] — Train Acc: 61.61%, Loss: 0.9028, CLS: 0.9028, REC: 492.5273, CONTR: 3.1779
+⏱️ Epoch [30] took 305.13 seconds
+Epoch 31/100, memory allocated: 102761.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [31/100] — Train Acc: 62.53%, Loss: 0.8746, CLS: 0.8746, REC: 504.8245, CONTR: 3.1664
+
+📊 Validation Summary
+  Accuracy:              63.60%
+  Avg Total Loss:        0.9226
+  Classification Loss:   0.9226
+  Reconstruction Loss:   543.8657
+  Contrastive Loss:      3.0894
+
+📌 Per-Class Accuracy:
+  BPSK           : 100.00%
+  QPSK           : 94.88%
+  8PSK           : 95.23%
+  16APSK         : 88.70%
+  32APSK         : 70.94%
+  64APSK         : 49.05%
+  128APSK        : 26.77%
+  16QAM          : 75.18%
+  32QAM          : 42.83%
+  64QAM          : 33.59%
+  128QAM         : 19.55%
+  256QAM         : 11.62%
+  AM-DSB-SC      : 42.71%
+  AM-DSB-WC      : 68.81%
+  FM             : 100.00%
+  GMSK           : 100.00%
+
+⏱️ Epoch [31] took 305.02 seconds
+Epoch 32/100, memory allocated: 102761.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [32/100] — Train Acc: 62.95%, Loss: 0.8585, CLS: 0.8585, REC: 512.6299, CONTR: 3.1413
+💾 Saved new best model @ val_loss=0.875961 -> results/model_fine_on_reconstruction_contrastive_XXX_10/last_good_model2.pth
+⏱️ Epoch [32] took 305.36 seconds
+Epoch 33/100, memory allocated: 102762.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [33/100] — Train Acc: 63.07%, Loss: 0.8580, CLS: 0.8580, REC: 520.3655, CONTR: 3.1172
+⏱️ Epoch [33] took 305.18 seconds
+Epoch 34/100, memory allocated: 102762.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [34/100] — Train Acc: 63.21%, Loss: 0.8395, CLS: 0.8395, REC: 526.8764, CONTR: 3.1178
+💾 Saved new best model @ val_loss=0.864547 -> results/model_fine_on_reconstruction_contrastive_XXX_10/last_good_model2.pth
+⏱️ Epoch [34] took 305.10 seconds
+Epoch 35/100, memory allocated: 102763.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [35/100] — Train Acc: 63.37%, Loss: 0.8356, CLS: 0.8356, REC: 549.8031, CONTR: 3.1055
+⏱️ Epoch [35] took 305.10 seconds
+Epoch 36/100, memory allocated: 102763.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [36/100] — Train Acc: 63.51%, Loss: 0.8213, CLS: 0.8213, REC: 563.1044, CONTR: 3.1160
+⏱️ Epoch [36] took 305.08 seconds
+Epoch 37/100, memory allocated: 102764.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [37/100] — Train Acc: 63.66%, Loss: 0.8257, CLS: 0.8257, REC: 564.8396, CONTR: 3.0961
+⏱️ Epoch [37] took 305.21 seconds
+Epoch 38/100, memory allocated: 102764.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [38/100] — Train Acc: 63.67%, Loss: 0.8217, CLS: 0.8217, REC: 561.8560, CONTR: 3.0723
+💾 Saved new best model @ val_loss=0.839962 -> results/model_fine_on_reconstruction_contrastive_XXX_10/last_good_model2.pth
+⏱️ Epoch [38] took 305.41 seconds
+Epoch 39/100, memory allocated: 102765.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [39/100] — Train Acc: 64.11%, Loss: 0.8109, CLS: 0.8109, REC: 571.0867, CONTR: 3.0497
+⏱️ Epoch [39] took 305.20 seconds
+Epoch 40/100, memory allocated: 102765.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [40/100] — Train Acc: 63.90%, Loss: 0.7987, CLS: 0.7987, REC: 586.4699, CONTR: 3.0349
+⏱️ Epoch [40] took 304.98 seconds
+Epoch 41/100, memory allocated: 102766.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [41/100] — Train Acc: 63.98%, Loss: 0.8024, CLS: 0.8024, REC: 591.5372, CONTR: 3.0392
+
+📊 Validation Summary
+  Accuracy:              65.57%
+  Avg Total Loss:        0.8695
+  Classification Loss:   0.8695
+  Reconstruction Loss:   617.2839
+  Contrastive Loss:      2.8328
+
+📌 Per-Class Accuracy:
+  BPSK           : 100.00%
+  QPSK           : 96.13%
+  8PSK           : 94.17%
+  16APSK         : 85.48%
+  32APSK         : 79.09%
+  64APSK         : 48.65%
+  128APSK        : 40.47%
+  16QAM          : 77.84%
+  32QAM          : 60.23%
+  64QAM          : 32.48%
+  128QAM         : 12.61%
+  256QAM         : 23.42%
+  AM-DSB-SC      : 15.99%
+  AM-DSB-WC      : 85.88%
+  FM             : 100.00%
+  GMSK           : 99.60%
+
+⏱️ Epoch [41] took 305.24 seconds
+Epoch 42/100, memory allocated: 102766.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [42/100] — Train Acc: 64.32%, Loss: 0.7899, CLS: 0.7899, REC: 597.2159, CONTR: 3.0222
+⏱️ Epoch [42] took 305.16 seconds
+Epoch 43/100, memory allocated: 102767.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [43/100] — Train Acc: 64.02%, Loss: 0.7961, CLS: 0.7961, REC: 598.4975, CONTR: 2.9731
+⏱️ Epoch [43] took 304.97 seconds
+Epoch 44/100, memory allocated: 102767.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [44/100] — Train Acc: 64.29%, Loss: 0.7757, CLS: 0.7757, REC: 597.1743, CONTR: 2.9623
+💾 Saved new best model @ val_loss=0.829063 -> results/model_fine_on_reconstruction_contrastive_XXX_10/last_good_model2.pth
+⏱️ Epoch [44] took 304.97 seconds
+Epoch 45/100, memory allocated: 102768.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [45/100] — Train Acc: 64.59%, Loss: 0.7723, CLS: 0.7723, REC: 604.3327, CONTR: 2.9765
+⏱️ Epoch [45] took 305.13 seconds
+Epoch 46/100, memory allocated: 102768.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [46/100] — Train Acc: 64.99%, Loss: 0.7494, CLS: 0.7494, REC: 618.4605, CONTR: 2.9496
+⏱️ Epoch [46] took 304.93 seconds
+Epoch 47/100, memory allocated: 102769.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [47/100] — Train Acc: 65.07%, Loss: 0.7411, CLS: 0.7411, REC: 637.7992, CONTR: 2.9532
+⏱️ Epoch [47] took 305.45 seconds
+Epoch 48/100, memory allocated: 102769.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [48/100] — Train Acc: 65.28%, Loss: 0.7312, CLS: 0.7312, REC: 658.5503, CONTR: 2.9490
+⏱️ Epoch [48] took 305.13 seconds
+Epoch 49/100, memory allocated: 102770.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [49/100] — Train Acc: 65.19%, Loss: 0.7381, CLS: 0.7381, REC: 664.4409, CONTR: 2.9017
+⏱️ Epoch [49] took 305.13 seconds
+Epoch 50/100, memory allocated: 102770.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [50/100] — Train Acc: 65.44%, Loss: 0.7266, CLS: 0.7266, REC: 657.9085, CONTR: 2.9036
+⏱️ Epoch [50] took 305.09 seconds
+Epoch 51/100, memory allocated: 102771.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [51/100] — Train Acc: 65.36%, Loss: 0.7183, CLS: 0.7183, REC: 679.8115, CONTR: 2.8701
+
+📊 Validation Summary
+  Accuracy:              66.43%
+  Avg Total Loss:        0.8308
+  Classification Loss:   0.8308
+  Reconstruction Loss:   629.7920
+  Contrastive Loss:      2.6461
+
+📌 Per-Class Accuracy:
+  BPSK           : 100.00%
+  QPSK           : 92.27%
+  8PSK           : 96.58%
+  16APSK         : 86.19%
+  32APSK         : 83.77%
+  64APSK         : 47.96%
+  128APSK        : 50.26%
+  16QAM          : 76.65%
+  32QAM          : 52.89%
+  64QAM          : 28.69%
+  128QAM         : 14.81%
+  256QAM         : 27.61%
+  AM-DSB-SC      : 28.02%
+  AM-DSB-WC      : 79.98%
+  FM             : 100.00%
+  GMSK           : 100.00%
+
+⏱️ Epoch [51] took 305.26 seconds
+Epoch 52/100, memory allocated: 102771.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [52/100] — Train Acc: 65.61%, Loss: 0.7119, CLS: 0.7119, REC: 683.7712, CONTR: 2.8784
+⏱️ Epoch [52] took 305.26 seconds
+Epoch 53/100, memory allocated: 102772.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [53/100] — Train Acc: 65.67%, Loss: 0.6978, CLS: 0.6978, REC: 723.6371, CONTR: 2.8532
+⏱️ Epoch [53] took 305.07 seconds
+Epoch 54/100, memory allocated: 102772.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [54/100] — Train Acc: 65.45%, Loss: 0.6996, CLS: 0.6996, REC: 722.0374, CONTR: 2.8415
+💾 Saved new best model @ val_loss=0.813912 -> results/model_fine_on_reconstruction_contrastive_XXX_10/last_good_model2.pth
+⏱️ Epoch [54] took 305.42 seconds
+Epoch 55/100, memory allocated: 102773.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [55/100] — Train Acc: 65.79%, Loss: 0.6958, CLS: 0.6958, REC: 710.6282, CONTR: 2.8188
+⏱️ Epoch [55] took 305.29 seconds
+Epoch 56/100, memory allocated: 102773.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [56/100] — Train Acc: 65.91%, Loss: 0.6833, CLS: 0.6833, REC: 729.0571, CONTR: 2.8169
+⏱️ Epoch [56] took 305.17 seconds
+Epoch 57/100, memory allocated: 102774.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [57/100] — Train Acc: 65.96%, Loss: 0.6911, CLS: 0.6911, REC: 729.7122, CONTR: 2.8214
+⏱️ Epoch [57] took 305.11 seconds
+Epoch 58/100, memory allocated: 102774.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [58/100] — Train Acc: 65.84%, Loss: 0.6770, CLS: 0.6770, REC: 751.0594, CONTR: 2.8022
+⏱️ Epoch [58] took 305.00 seconds
+Epoch 59/100, memory allocated: 102775.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [59/100] — Train Acc: 65.93%, Loss: 0.6663, CLS: 0.6663, REC: 756.9160, CONTR: 2.8023
+⏱️ Epoch [59] took 305.46 seconds
+Epoch 60/100, memory allocated: 102775.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [60/100] — Train Acc: 65.94%, Loss: 0.6644, CLS: 0.6644, REC: 760.8811, CONTR: 2.8082
+⏱️ Epoch [60] took 305.16 seconds
+Epoch 61/100, memory allocated: 102776.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [61/100] — Train Acc: 66.16%, Loss: 0.6475, CLS: 0.6475, REC: 772.3503, CONTR: 2.7742
+
+📊 Validation Summary
+  Accuracy:              67.53%
+  Avg Total Loss:        0.8654
+  Classification Loss:   0.8654
+  Reconstruction Loss:   793.8808
+  Contrastive Loss:      2.6219
+
+📌 Per-Class Accuracy:
+  BPSK           : 100.00%
+  QPSK           : 94.66%
+  8PSK           : 91.75%
+  16APSK         : 89.12%
+  32APSK         : 77.56%
+  64APSK         : 55.84%
+  128APSK        : 46.69%
+  16QAM          : 76.06%
+  32QAM          : 55.66%
+  64QAM          : 29.04%
+  128QAM         : 33.89%
+  256QAM         : 17.82%
+  AM-DSB-SC      : 61.81%
+  AM-DSB-WC      : 52.20%
+  FM             : 100.00%
+  GMSK           : 99.83%
+
+⏱️ Epoch [61] took 305.19 seconds
+Epoch 62/100, memory allocated: 102776.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [62/100] — Train Acc: 66.49%, Loss: 0.6236, CLS: 0.6236, REC: 793.8360, CONTR: 2.7596
+⏱️ Epoch [62] took 305.11 seconds
+Epoch 63/100, memory allocated: 102777.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [63/100] — Train Acc: 66.55%, Loss: 0.6283, CLS: 0.6283, REC: 785.2972, CONTR: 2.7055
+⏱️ Epoch [63] took 322.33 seconds
+Epoch 64/100, memory allocated: 102777.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [64/100] — Train Acc: 66.63%, Loss: 0.6127, CLS: 0.6127, REC: 800.0668, CONTR: 2.7368
+⏱️ Epoch [64] took 304.89 seconds
+Epoch 65/100, memory allocated: 102778.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [65/100] — Train Acc: 66.53%, Loss: 0.6166, CLS: 0.6166, REC: 811.3528, CONTR: 2.6820
+⏱️ Epoch [65] took 305.08 seconds
+Epoch 66/100, memory allocated: 102778.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [66/100] — Train Acc: 66.46%, Loss: 0.5959, CLS: 0.5959, REC: 839.9971, CONTR: 2.6782
+⏱️ Epoch [66] took 305.01 seconds
+Epoch 67/100, memory allocated: 102779.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [67/100] — Train Acc: 66.64%, Loss: 0.5932, CLS: 0.5932, REC: 840.9347, CONTR: 2.6482
+⏱️ Epoch [67] took 305.22 seconds
+Epoch 68/100, memory allocated: 102779.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [68/100] — Train Acc: 66.54%, Loss: 0.5927, CLS: 0.5927, REC: 846.5072, CONTR: 2.6778
+⏱️ Epoch [68] took 305.44 seconds
+Epoch 69/100, memory allocated: 102780.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [69/100] — Train Acc: 66.58%, Loss: 0.5873, CLS: 0.5873, REC: 843.4727, CONTR: 2.6695
+⏱️ Epoch [69] took 305.31 seconds
+Epoch 70/100, memory allocated: 102780.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [70/100] — Train Acc: 66.68%, Loss: 0.5798, CLS: 0.5798, REC: 849.2392, CONTR: 2.6493
+⏱️ Epoch [70] took 305.24 seconds
+Epoch 71/100, memory allocated: 102781.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [71/100] — Train Acc: 66.59%, Loss: 0.5799, CLS: 0.5799, REC: 880.3380, CONTR: 2.6319
+
+📊 Validation Summary
+  Accuracy:              66.12%
+  Avg Total Loss:        0.9615
+  Classification Loss:   0.9615
+  Reconstruction Loss:   897.4173
+  Contrastive Loss:      2.5126
+
+📌 Per-Class Accuracy:
+  BPSK           : 100.00%
+  QPSK           : 94.37%
+  8PSK           : 95.29%
+  16APSK         : 84.34%
+  32APSK         : 82.02%
+  64APSK         : 62.81%
+  128APSK        : 30.86%
+  16QAM          : 72.34%
+  32QAM          : 64.39%
+  64QAM          : 17.78%
+  128QAM         : 36.15%
+  256QAM         : 25.07%
+  AM-DSB-SC      : 8.42%
+  AM-DSB-WC      : 86.92%
+  FM             : 100.00%
+  GMSK           : 100.00%
+
+⏱️ Epoch [71] took 305.52 seconds
+Epoch 72/100, memory allocated: 102781.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [72/100] — Train Acc: 66.74%, Loss: 0.5668, CLS: 0.5668, REC: 893.1061, CONTR: 2.6533
+⏱️ Epoch [72] took 305.47 seconds
+Epoch 73/100, memory allocated: 102782.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [73/100] — Train Acc: 66.81%, Loss: 0.5493, CLS: 0.5493, REC: 899.7327, CONTR: 2.6521
+⏱️ Epoch [73] took 305.06 seconds
+Epoch 74/100, memory allocated: 102782.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [74/100] — Train Acc: 66.77%, Loss: 0.5492, CLS: 0.5492, REC: 898.9523, CONTR: 2.6236
+⏱️ Epoch [74] took 305.45 seconds
+Epoch 75/100, memory allocated: 102783.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [75/100] — Train Acc: 66.74%, Loss: 0.5442, CLS: 0.5442, REC: 901.1730, CONTR: 2.6082
+⏱️ Epoch [75] took 305.23 seconds
+Epoch 76/100, memory allocated: 102783.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [76/100] — Train Acc: 66.91%, Loss: 0.5235, CLS: 0.5235, REC: 915.7111, CONTR: 2.5935
+⏱️ Epoch [76] took 305.26 seconds
+Epoch 77/100, memory allocated: 102784.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [77/100] — Train Acc: 66.93%, Loss: 0.5118, CLS: 0.5118, REC: 942.0072, CONTR: 2.6011
+⏱️ Epoch [77] took 305.37 seconds
+Epoch 78/100, memory allocated: 102784.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [78/100] — Train Acc: 67.25%, Loss: 0.4961, CLS: 0.4961, REC: 966.6889, CONTR: 2.5453
+⏱️ Epoch [78] took 305.45 seconds
+Epoch 79/100, memory allocated: 102785.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [79/100] — Train Acc: 67.06%, Loss: 0.4951, CLS: 0.4951, REC: 992.4709, CONTR: 2.5554
+⏱️ Epoch [79] took 305.31 seconds
+Epoch 80/100, memory allocated: 102785.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [80/100] — Train Acc: 67.08%, Loss: 0.4869, CLS: 0.4869, REC: 986.7395, CONTR: 2.5447
+⏱️ Epoch [80] took 305.49 seconds
+Epoch 81/100, memory allocated: 102786.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [81/100] — Train Acc: 67.17%, Loss: 0.4843, CLS: 0.4843, REC: 994.6683, CONTR: 2.5298
+
+📊 Validation Summary
+  Accuracy:              66.58%
+  Avg Total Loss:        1.0316
+  Classification Loss:   1.0316
+  Reconstruction Loss:   1043.5256
+  Contrastive Loss:      2.3121
+
+📌 Per-Class Accuracy:
+  BPSK           : 100.00%
+  QPSK           : 96.08%
+  8PSK           : 93.52%
+  16APSK         : 84.82%
+  32APSK         : 82.19%
+  64APSK         : 45.77%
+  128APSK        : 51.47%
+  16QAM          : 74.88%
+  32QAM          : 46.18%
+  64QAM          : 19.42%
+  128QAM         : 38.40%
+  256QAM         : 37.46%
+  AM-DSB-SC      : 21.24%
+  AM-DSB-WC      : 76.56%
+  FM             : 100.00%
+  GMSK           : 100.00%
+
+⏱️ Epoch [81] took 305.22 seconds
+Epoch 82/100, memory allocated: 102786.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [82/100] — Train Acc: 67.34%, Loss: 0.4760, CLS: 0.4760, REC: 1014.6658, CONTR: 2.5013
+⏱️ Epoch [82] took 305.28 seconds
+Epoch 83/100, memory allocated: 102787.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [83/100] — Train Acc: 66.99%, Loss: 0.4675, CLS: 0.4675, REC: 1036.2230, CONTR: 2.5213
+⏱️ Epoch [83] took 305.24 seconds
+Epoch 84/100, memory allocated: 102787.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [84/100] — Train Acc: 67.28%, Loss: 0.4519, CLS: 0.4519, REC: 1043.8344, CONTR: 2.5287
+⏱️ Epoch [84] took 305.35 seconds
+Epoch 85/100, memory allocated: 102788.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [85/100] — Train Acc: 67.10%, Loss: 0.4604, CLS: 0.4604, REC: 1036.7262, CONTR: 2.5094
+⏱️ Epoch [85] took 305.47 seconds
+Epoch 86/100, memory allocated: 102788.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [86/100] — Train Acc: 67.11%, Loss: 0.4501, CLS: 0.4501, REC: 1060.9751, CONTR: 2.4951
+⏱️ Epoch [86] took 305.22 seconds
+Epoch 87/100, memory allocated: 102789.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [87/100] — Train Acc: 67.02%, Loss: 0.4366, CLS: 0.4366, REC: 1062.2117, CONTR: 2.4811
+⏱️ Epoch [87] took 305.17 seconds
+Epoch 88/100, memory allocated: 102789.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [88/100] — Train Acc: 67.05%, Loss: 0.4465, CLS: 0.4465, REC: 1057.1586, CONTR: 2.4916
+⏱️ Epoch [88] took 305.37 seconds
+Epoch 89/100, memory allocated: 102790.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [89/100] — Train Acc: 67.21%, Loss: 0.4324, CLS: 0.4324, REC: 1048.0808, CONTR: 2.4694
+⏱️ Epoch [89] took 305.29 seconds
+Epoch 90/100, memory allocated: 102790.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [90/100] — Train Acc: 67.24%, Loss: 0.4186, CLS: 0.4186, REC: 1098.7931, CONTR: 2.4638
+⏱️ Epoch [90] took 305.22 seconds
+Epoch 91/100, memory allocated: 102791.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [91/100] — Train Acc: 67.54%, Loss: 0.4087, CLS: 0.4087, REC: 1125.7733, CONTR: 2.4758
+
+📊 Validation Summary
+  Accuracy:              66.60%
+  Avg Total Loss:        1.1545
+  Classification Loss:   1.1545
+  Reconstruction Loss:   1126.9559
+  Contrastive Loss:      2.3006
+
+📌 Per-Class Accuracy:
+  BPSK           : 100.00%
+  QPSK           : 93.80%
+  8PSK           : 95.29%
+  16APSK         : 84.46%
+  32APSK         : 80.73%
+  64APSK         : 61.54%
+  128APSK        : 28.84%
+  16QAM          : 77.13%
+  32QAM          : 56.24%
+  64QAM          : 34.40%
+  128QAM         : 28.51%
+  256QAM         : 29.56%
+  AM-DSB-SC      : 25.08%
+  AM-DSB-WC      : 72.86%
+  FM             : 99.94%
+  GMSK           : 100.00%
+
+⏱️ Epoch [91] took 336.73 seconds
+Epoch 92/100, memory allocated: 102791.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [92/100] — Train Acc: 67.64%, Loss: 0.3994, CLS: 0.3994, REC: 1135.0613, CONTR: 2.4430
+⏱️ Epoch [92] took 305.22 seconds
+Epoch 93/100, memory allocated: 102792.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [93/100] — Train Acc: 67.37%, Loss: 0.4009, CLS: 0.4009, REC: 1131.0289, CONTR: 2.4362
+⏱️ Epoch [93] took 305.41 seconds
+Epoch 94/100, memory allocated: 102792.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [94/100] — Train Acc: 67.44%, Loss: 0.3955, CLS: 0.3955, REC: 1163.4117, CONTR: 2.4677
+⏱️ Epoch [94] took 305.45 seconds
+Epoch 95/100, memory allocated: 102793.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [95/100] — Train Acc: 67.38%, Loss: 0.3862, CLS: 0.3862, REC: 1166.7443, CONTR: 2.4202
+⏱️ Epoch [95] took 305.08 seconds
+Epoch 96/100, memory allocated: 102793.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [96/100] — Train Acc: 67.40%, Loss: 0.3947, CLS: 0.3947, REC: 1122.2073, CONTR: 2.4307
+⏱️ Epoch [96] took 305.21 seconds
+Epoch 97/100, memory allocated: 102794.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [97/100] — Train Acc: 67.37%, Loss: 0.3733, CLS: 0.3733, REC: 1172.5838, CONTR: 2.4412
+⏱️ Epoch [97] took 305.05 seconds
+Epoch 98/100, memory allocated: 102794.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [98/100] — Train Acc: 67.31%, Loss: 0.3778, CLS: 0.3778, REC: 1177.7808, CONTR: 2.4196
+⏱️ Epoch [98] took 305.29 seconds
+Epoch 99/100, memory allocated: 102795.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [99/100] — Train Acc: 67.29%, Loss: 0.3675, CLS: 0.3675, REC: 1227.0340, CONTR: 2.4510
+⏱️ Epoch [99] took 305.10 seconds
+Epoch 100/100, memory allocated: 102795.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [100/100] — Train Acc: 67.60%, Loss: 0.3716, CLS: 0.3716, REC: 1201.1076, CONTR: 2.4451
+⏱️ Epoch [100] took 305.02 seconds
+✅ Training 2 completed in 510.78 minutes.
+📦 Model saved to results/model_fine_on_reconstruction_contrastive_XXX_10/model_model_fine_on_reconstruction_contrastive_XXX_10_run2.pth
+📊 Metrics saved to results/model_fine_on_reconstruction_contrastive_XXX_10/Quick_plot_2/metrics_model_fine_on_reconstruction_contrastive_XXX_10_run2.pkl
+📈 Metrics plot saved to results/model_fine_on_reconstruction_contrastive_XXX_10/Quick_plot_2/metrics_model_fine_on_reconstruction_contrastive_XXX_10_run2.pkl.pdf
+🔍 Test model 2 on test data loader set...
+
+🧪 Training 3: with hyperparameters: {'lr': 0.001, 'lr_gamma': 0.9, 'step_size': 15, 'weight_decay': 0.0, 'dropout': 0.2, 'optimizer': 'Adam'} **********
+[Shuffle & Restart] Splits set: train=192348, val=27478, test=54958
+📦 Original Dataset Size: (320000, 512, 2)
+📦 Used Data Length (from config): 300000
+🧪 Split Summary:
+   - Train Samples: 192348
+   - Val Samples:   27478
+   - Test Samples:  54958
+📝 Labeled vs Unlabeled per split:
+   - Train: 19147 labeled | 173201 unlabeled
+   - Val:   2796 labeled | 24682 unlabeled
+   - Test:  5535 labeled | 49423 unlabeled
+-----------------------------
+IQ min: I = -3.2635, Q = -3.3172
+IQ max: I = 3.3755, Q = 3.4937
+SNR range: [0] to [22]
+
+📊 Class distribution:
+  BPSK: 17173 samples
+  QPSK: 17110 samples
+  8PSK: 17198 samples
+  16APSK: 17155 samples
+  32APSK: 17131 samples
+  64APSK: 17205 samples
+  128APSK: 17225 samples
+  16QAM: 17160 samples
+  32QAM: 17194 samples
+  64QAM: 17264 samples
+  128QAM: 17164 samples
+  256QAM: 17184 samples
+  AM-DSB-SC: 17140 samples
+  AM-DSB-WC: 17088 samples
+  FM: 17128 samples
+  GMSK: 17265 samples
+
+📶 SNR distribution:
+  SNR 0: 25176 samples
+  SNR 2: 24998 samples
+  SNR 4: 24966 samples
+  SNR 6: 24921 samples
+  SNR 8: 24980 samples
+  SNR 10: 24834 samples
+  SNR 12: 24806 samples
+  SNR 14: 24990 samples
+  SNR 16: 25031 samples
+  SNR 18: 24994 samples
+  SNR 20: 25088 samples
+⏱️ Starting training...
+🚀 Start training Vit
+Epoch 1/100, memory allocated: 51399.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [1/100] — Train Acc: 40.10%, Loss: 1.5527, CLS: 1.5527, REC: 171.1690, CONTR: 4.2309
+
+📊 Validation Summary
+  Accuracy:              40.73%
+  Avg Total Loss:        1.5173
+  Classification Loss:   1.5173
+  Reconstruction Loss:   181.4088
+  Contrastive Loss:      4.0813
+
+📌 Per-Class Accuracy:
+  BPSK           : 99.29%
+  QPSK           : 74.77%
+  8PSK           : 16.45%
+  16APSK         : 61.12%
+  32APSK         : 34.24%
+  64APSK         : 0.00%
+  128APSK        : 0.00%
+  16QAM          : 1.05%
+  32QAM          : 38.38%
+  64QAM          : 0.92%
+  128QAM         : 22.38%
+  256QAM         : 7.95%
+  AM-DSB-SC      : 99.88%
+  AM-DSB-WC      : 0.48%
+  FM             : 100.00%
+  GMSK           : 99.83%
+
+💾 Saved new best model @ val_loss=1.517334 -> results/model_fine_on_reconstruction_contrastive_XXX_10/last_good_model3.pth
+⏱️ Epoch [1] took 305.16 seconds
+Epoch 2/100, memory allocated: 102746.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [2/100] — Train Acc: 45.03%, Loss: 1.3304, CLS: 1.3304, REC: 235.1840, CONTR: 3.9912
+⏱️ Epoch [2] took 305.56 seconds
+Epoch 3/100, memory allocated: 102747.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [3/100] — Train Acc: 46.53%, Loss: 1.2860, CLS: 1.2860, REC: 256.7308, CONTR: 3.8875
+⏱️ Epoch [3] took 305.51 seconds
+Epoch 4/100, memory allocated: 102747.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [4/100] — Train Acc: 47.23%, Loss: 1.2599, CLS: 1.2599, REC: 264.3045, CONTR: 3.8627
+💾 Saved new best model @ val_loss=1.280662 -> results/model_fine_on_reconstruction_contrastive_XXX_10/last_good_model3.pth
+⏱️ Epoch [4] took 305.51 seconds
+Epoch 5/100, memory allocated: 102748.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [5/100] — Train Acc: 48.23%, Loss: 1.2355, CLS: 1.2355, REC: 280.3920, CONTR: 3.7791
+⏱️ Epoch [5] took 305.41 seconds
+Epoch 6/100, memory allocated: 102748.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [6/100] — Train Acc: 48.52%, Loss: 1.2301, CLS: 1.2301, REC: 279.0517, CONTR: 3.7440
+⏱️ Epoch [6] took 305.59 seconds
+Epoch 7/100, memory allocated: 102749.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [7/100] — Train Acc: 49.36%, Loss: 1.2207, CLS: 1.2207, REC: 296.3112, CONTR: 3.7192
+⏱️ Epoch [7] took 305.39 seconds
+Epoch 8/100, memory allocated: 102749.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [8/100] — Train Acc: 50.36%, Loss: 1.2055, CLS: 1.2055, REC: 303.5399, CONTR: 3.6886
+⏱️ Epoch [8] took 305.28 seconds
+Epoch 9/100, memory allocated: 102750.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [9/100] — Train Acc: 51.58%, Loss: 1.1781, CLS: 1.1781, REC: 320.5982, CONTR: 3.6376
+💾 Saved new best model @ val_loss=1.219459 -> results/model_fine_on_reconstruction_contrastive_XXX_10/last_good_model3.pth
+⏱️ Epoch [9] took 349.80 seconds
+Epoch 10/100, memory allocated: 102750.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [10/100] — Train Acc: 52.85%, Loss: 1.1567, CLS: 1.1567, REC: 332.2314, CONTR: 3.5825
+⏱️ Epoch [10] took 305.14 seconds
+Epoch 11/100, memory allocated: 102751.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [11/100] — Train Acc: 53.51%, Loss: 1.1331, CLS: 1.1331, REC: 346.1975, CONTR: 3.5394
+
+📊 Validation Summary
+  Accuracy:              50.71%
+  Avg Total Loss:        1.2628
+  Classification Loss:   1.2628
+  Reconstruction Loss:   312.8190
+  Contrastive Loss:      3.4055
+
+📌 Per-Class Accuracy:
+  BPSK           : 99.94%
+  QPSK           : 95.00%
+  8PSK           : 54.41%
+  16APSK         : 68.40%
+  32APSK         : 59.09%
+  64APSK         : 30.20%
+  128APSK        : 18.84%
+  16QAM          : 43.34%
+  32QAM          : 9.51%
+  64QAM          : 8.35%
+  128QAM         : 0.29%
+  256QAM         : 30.78%
+  AM-DSB-SC      : 0.00%
+  AM-DSB-WC      : 99.94%
+  FM             : 100.00%
+  GMSK           : 99.60%
+
+⏱️ Epoch [11] took 305.46 seconds
+Epoch 12/100, memory allocated: 102751.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [12/100] — Train Acc: 54.53%, Loss: 1.1104, CLS: 1.1104, REC: 351.5227, CONTR: 3.5040
+💾 Saved new best model @ val_loss=1.135782 -> results/model_fine_on_reconstruction_contrastive_XXX_10/last_good_model3.pth
+⏱️ Epoch [12] took 305.60 seconds
+Epoch 13/100, memory allocated: 102752.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [13/100] — Train Acc: 54.84%, Loss: 1.1001, CLS: 1.1001, REC: 369.3326, CONTR: 3.4548
+⏱️ Epoch [13] took 305.91 seconds
+Epoch 14/100, memory allocated: 102752.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [14/100] — Train Acc: 55.45%, Loss: 1.0862, CLS: 1.0862, REC: 378.6699, CONTR: 3.4407
+⏱️ Epoch [14] took 305.52 seconds
+Epoch 15/100, memory allocated: 102753.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [15/100] — Train Acc: 55.79%, Loss: 1.0728, CLS: 1.0728, REC: 373.3655, CONTR: 3.4145
+⏱️ Epoch [15] took 305.64 seconds
+Epoch 16/100, memory allocated: 102753.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [16/100] — Train Acc: 57.15%, Loss: 1.0435, CLS: 1.0435, REC: 396.2356, CONTR: 3.3858
+💾 Saved new best model @ val_loss=1.075827 -> results/model_fine_on_reconstruction_contrastive_XXX_10/last_good_model3.pth
+⏱️ Epoch [16] took 305.66 seconds
+Epoch 17/100, memory allocated: 102754.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [17/100] — Train Acc: 58.05%, Loss: 1.0150, CLS: 1.0150, REC: 403.6466, CONTR: 3.3500
+⏱️ Epoch [17] took 338.30 seconds
+Epoch 18/100, memory allocated: 102754.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [18/100] — Train Acc: 58.07%, Loss: 1.0108, CLS: 1.0108, REC: 414.8016, CONTR: 3.3462
+💾 Saved new best model @ val_loss=1.071202 -> results/model_fine_on_reconstruction_contrastive_XXX_10/last_good_model3.pth
+⏱️ Epoch [18] took 305.43 seconds
+Epoch 19/100, memory allocated: 102755.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [19/100] — Train Acc: 58.81%, Loss: 0.9985, CLS: 0.9985, REC: 428.2606, CONTR: 3.2961
+⏱️ Epoch [19] took 305.95 seconds
+Epoch 20/100, memory allocated: 102755.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [20/100] — Train Acc: 59.37%, Loss: 0.9866, CLS: 0.9866, REC: 433.4199, CONTR: 3.2563
+⏱️ Epoch [20] took 305.59 seconds
+Epoch 21/100, memory allocated: 102756.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [21/100] — Train Acc: 59.45%, Loss: 0.9770, CLS: 0.9770, REC: 438.8571, CONTR: 3.2701
+
+📊 Validation Summary
+  Accuracy:              58.96%
+  Avg Total Loss:        1.0269
+  Classification Loss:   1.0269
+  Reconstruction Loss:   384.9817
+  Contrastive Loss:      3.1287
+
+📌 Per-Class Accuracy:
+  BPSK           : 99.94%
+  QPSK           : 90.01%
+  8PSK           : 91.18%
+  16APSK         : 87.72%
+  32APSK         : 75.87%
+  64APSK         : 38.19%
+  128APSK        : 21.20%
+  16QAM          : 68.06%
+  32QAM          : 30.84%
+  64QAM          : 16.25%
+  128QAM         : 4.20%
+  256QAM         : 24.09%
+  AM-DSB-SC      : 14.29%
+  AM-DSB-WC      : 86.96%
+  FM             : 100.00%
+  GMSK           : 100.00%
+
+💾 Saved new best model @ val_loss=1.026858 -> results/model_fine_on_reconstruction_contrastive_XXX_10/last_good_model3.pth
+⏱️ Epoch [21] took 305.45 seconds
+Epoch 22/100, memory allocated: 102756.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [22/100] — Train Acc: 59.50%, Loss: 0.9818, CLS: 0.9818, REC: 431.4945, CONTR: 3.2429
+⏱️ Epoch [22] took 305.57 seconds
+Epoch 23/100, memory allocated: 102757.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [23/100] — Train Acc: 59.97%, Loss: 0.9659, CLS: 0.9659, REC: 429.7130, CONTR: 3.2405
+⏱️ Epoch [23] took 305.45 seconds
+Epoch 24/100, memory allocated: 102757.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [24/100] — Train Acc: 60.31%, Loss: 0.9510, CLS: 0.9510, REC: 445.5370, CONTR: 3.1954
+💾 Saved new best model @ val_loss=0.990738 -> results/model_fine_on_reconstruction_contrastive_XXX_10/last_good_model3.pth
+⏱️ Epoch [24] took 305.81 seconds
+Epoch 25/100, memory allocated: 102758.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [25/100] — Train Acc: 60.31%, Loss: 0.9374, CLS: 0.9374, REC: 449.7502, CONTR: 3.1795
+💾 Saved new best model @ val_loss=0.966188 -> results/model_fine_on_reconstruction_contrastive_XXX_10/last_good_model3.pth
+⏱️ Epoch [25] took 337.90 seconds
+Epoch 26/100, memory allocated: 102758.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [26/100] — Train Acc: 60.65%, Loss: 0.9493, CLS: 0.9493, REC: 457.5841, CONTR: 3.1730
+⏱️ Epoch [26] took 305.57 seconds
+Epoch 27/100, memory allocated: 102759.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [27/100] — Train Acc: 61.31%, Loss: 0.9141, CLS: 0.9141, REC: 478.2289, CONTR: 3.1700
+⏱️ Epoch [27] took 305.70 seconds
+Epoch 28/100, memory allocated: 102759.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [28/100] — Train Acc: 60.84%, Loss: 0.9310, CLS: 0.9310, REC: 465.3822, CONTR: 3.1567
+💾 Saved new best model @ val_loss=0.931159 -> results/model_fine_on_reconstruction_contrastive_XXX_10/last_good_model3.pth
+⏱️ Epoch [28] took 305.79 seconds
+Epoch 29/100, memory allocated: 102760.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [29/100] — Train Acc: 61.23%, Loss: 0.9197, CLS: 0.9197, REC: 474.6271, CONTR: 3.1289
+⏱️ Epoch [29] took 305.87 seconds
+Epoch 30/100, memory allocated: 102760.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [30/100] — Train Acc: 61.47%, Loss: 0.9138, CLS: 0.9138, REC: 463.0302, CONTR: 3.1235
+⏱️ Epoch [30] took 305.72 seconds
+Epoch 31/100, memory allocated: 102761.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [31/100] — Train Acc: 62.33%, Loss: 0.8738, CLS: 0.8738, REC: 491.9660, CONTR: 3.0961
+
+📊 Validation Summary
+  Accuracy:              61.86%
+  Avg Total Loss:        0.9500
+  Classification Loss:   0.9500
+  Reconstruction Loss:   452.5048
+  Contrastive Loss:      3.0041
+
+📌 Per-Class Accuracy:
+  BPSK           : 100.00%
+  QPSK           : 94.10%
+  8PSK           : 93.45%
+  16APSK         : 87.24%
+  32APSK         : 80.26%
+  64APSK         : 36.38%
+  128APSK        : 26.98%
+  16QAM          : 72.83%
+  32QAM          : 23.92%
+  64QAM          : 16.36%
+  128QAM         : 24.40%
+  256QAM         : 33.95%
+  AM-DSB-SC      : 18.93%
+  AM-DSB-WC      : 86.36%
+  FM             : 100.00%
+  GMSK           : 99.88%
+
+⏱️ Epoch [31] took 305.79 seconds
+Epoch 32/100, memory allocated: 102761.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [32/100] — Train Acc: 62.58%, Loss: 0.8766, CLS: 0.8766, REC: 506.1135, CONTR: 3.0603
+⏱️ Epoch [32] took 305.54 seconds
+Epoch 33/100, memory allocated: 102762.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [33/100] — Train Acc: 62.64%, Loss: 0.8709, CLS: 0.8709, REC: 504.3672, CONTR: 3.0649
+💾 Saved new best model @ val_loss=0.869255 -> results/model_fine_on_reconstruction_contrastive_XXX_10/last_good_model3.pth
+⏱️ Epoch [33] took 305.76 seconds
+Epoch 34/100, memory allocated: 102762.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [34/100] — Train Acc: 62.91%, Loss: 0.8621, CLS: 0.8621, REC: 510.3813, CONTR: 3.0566
+⏱️ Epoch [34] took 305.76 seconds
+Epoch 35/100, memory allocated: 102763.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [35/100] — Train Acc: 62.88%, Loss: 0.8474, CLS: 0.8474, REC: 525.6240, CONTR: 3.0206
+⏱️ Epoch [35] took 305.47 seconds
+Epoch 36/100, memory allocated: 102763.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [36/100] — Train Acc: 63.38%, Loss: 0.8486, CLS: 0.8486, REC: 523.4252, CONTR: 2.9901
+⏱️ Epoch [36] took 305.47 seconds
+Epoch 37/100, memory allocated: 102764.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [37/100] — Train Acc: 63.22%, Loss: 0.8402, CLS: 0.8402, REC: 537.6095, CONTR: 2.9799
+⏱️ Epoch [37] took 305.72 seconds
+Epoch 38/100, memory allocated: 102764.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [38/100] — Train Acc: 63.60%, Loss: 0.8308, CLS: 0.8308, REC: 544.3079, CONTR: 2.9762
+⏱️ Epoch [38] took 305.54 seconds
+Epoch 39/100, memory allocated: 102765.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [39/100] — Train Acc: 63.70%, Loss: 0.8254, CLS: 0.8254, REC: 544.7321, CONTR: 2.9762
+⏱️ Epoch [39] took 305.90 seconds
+Epoch 40/100, memory allocated: 102765.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [40/100] — Train Acc: 63.87%, Loss: 0.8193, CLS: 0.8193, REC: 549.3087, CONTR: 2.9655
+💾 Saved new best model @ val_loss=0.855425 -> results/model_fine_on_reconstruction_contrastive_XXX_10/last_good_model3.pth
+⏱️ Epoch [40] took 305.80 seconds
+Epoch 41/100, memory allocated: 102766.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [41/100] — Train Acc: 64.02%, Loss: 0.8147, CLS: 0.8147, REC: 568.8774, CONTR: 2.9741
+
+📊 Validation Summary
+  Accuracy:              62.74%
+  Avg Total Loss:        0.9814
+  Classification Loss:   0.9814
+  Reconstruction Loss:   533.0432
+  Contrastive Loss:      2.8540
+
+📌 Per-Class Accuracy:
+  BPSK           : 99.94%
+  QPSK           : 95.42%
+  8PSK           : 92.60%
+  16APSK         : 85.87%
+  32APSK         : 70.82%
+  64APSK         : 63.09%
+  128APSK        : 29.11%
+  16QAM          : 75.80%
+  32QAM          : 40.35%
+  64QAM          : 8.41%
+  128QAM         : 13.52%
+  256QAM         : 23.52%
+  AM-DSB-SC      : 43.15%
+  AM-DSB-WC      : 67.17%
+  FM             : 100.00%
+  GMSK           : 99.94%
+
+⏱️ Epoch [41] took 305.93 seconds
+Epoch 42/100, memory allocated: 102766.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [42/100] — Train Acc: 64.26%, Loss: 0.8031, CLS: 0.8031, REC: 579.1969, CONTR: 2.9499
+⏱️ Epoch [42] took 305.81 seconds
+Epoch 43/100, memory allocated: 102767.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [43/100] — Train Acc: 64.04%, Loss: 0.7983, CLS: 0.7983, REC: 587.5262, CONTR: 2.9609
+⏱️ Epoch [43] took 305.71 seconds
+Epoch 44/100, memory allocated: 102767.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [44/100] — Train Acc: 64.51%, Loss: 0.7931, CLS: 0.7931, REC: 589.5624, CONTR: 2.9492
+💾 Saved new best model @ val_loss=0.844367 -> results/model_fine_on_reconstruction_contrastive_XXX_10/last_good_model3.pth
+⏱️ Epoch [44] took 305.63 seconds
+Epoch 45/100, memory allocated: 102768.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [45/100] — Train Acc: 64.50%, Loss: 0.7909, CLS: 0.7909, REC: 585.8755, CONTR: 2.9205
+⏱️ Epoch [45] took 305.82 seconds
+Epoch 46/100, memory allocated: 102768.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [46/100] — Train Acc: 64.95%, Loss: 0.7764, CLS: 0.7764, REC: 602.7033, CONTR: 2.9106
+💾 Saved new best model @ val_loss=0.841500 -> results/model_fine_on_reconstruction_contrastive_XXX_10/last_good_model3.pth
+⏱️ Epoch [46] took 305.71 seconds
+Epoch 47/100, memory allocated: 102769.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [47/100] — Train Acc: 65.09%, Loss: 0.7517, CLS: 0.7517, REC: 601.6853, CONTR: 2.8909
+⏱️ Epoch [47] took 305.81 seconds
+Epoch 48/100, memory allocated: 102769.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [48/100] — Train Acc: 64.93%, Loss: 0.7528, CLS: 0.7528, REC: 610.4533, CONTR: 2.8861
+⏱️ Epoch [48] took 305.56 seconds
+Epoch 49/100, memory allocated: 102770.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [49/100] — Train Acc: 65.27%, Loss: 0.7472, CLS: 0.7472, REC: 610.7543, CONTR: 2.8674
+⏱️ Epoch [49] took 305.71 seconds
+Epoch 50/100, memory allocated: 102770.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [50/100] — Train Acc: 65.31%, Loss: 0.7335, CLS: 0.7335, REC: 612.2290, CONTR: 2.8731
+⏱️ Epoch [50] took 305.59 seconds
+Epoch 51/100, memory allocated: 102771.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [51/100] — Train Acc: 65.25%, Loss: 0.7400, CLS: 0.7400, REC: 618.1477, CONTR: 2.8335
+
+📊 Validation Summary
+  Accuracy:              64.62%
+  Avg Total Loss:        0.9138
+  Classification Loss:   0.9138
+  Reconstruction Loss:   598.7471
+  Contrastive Loss:      2.6016
+
+📌 Per-Class Accuracy:
+  BPSK           : 100.00%
+  QPSK           : 94.46%
+  8PSK           : 96.76%
+  16APSK         : 86.94%
+  32APSK         : 76.71%
+  64APSK         : 43.56%
+  128APSK        : 42.01%
+  16QAM          : 80.92%
+  32QAM          : 44.79%
+  64QAM          : 21.62%
+  128QAM         : 24.11%
+  256QAM         : 22.59%
+  AM-DSB-SC      : 26.79%
+  AM-DSB-WC      : 76.44%
+  FM             : 100.00%
+  GMSK           : 100.00%
+
+⏱️ Epoch [51] took 305.45 seconds
+Epoch 52/100, memory allocated: 102771.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [52/100] — Train Acc: 65.53%, Loss: 0.7244, CLS: 0.7244, REC: 639.3507, CONTR: 2.8118
+💾 Saved new best model @ val_loss=0.808621 -> results/model_fine_on_reconstruction_contrastive_XXX_10/last_good_model3.pth
+⏱️ Epoch [52] took 305.69 seconds
+Epoch 53/100, memory allocated: 102772.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [53/100] — Train Acc: 65.51%, Loss: 0.7116, CLS: 0.7116, REC: 656.5207, CONTR: 2.7936
+⏱️ Epoch [53] took 305.61 seconds
+Epoch 54/100, memory allocated: 102772.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [54/100] — Train Acc: 65.52%, Loss: 0.7139, CLS: 0.7139, REC: 662.5763, CONTR: 2.8194
+⏱️ Epoch [54] took 305.57 seconds
+Epoch 55/100, memory allocated: 102773.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [55/100] — Train Acc: 65.61%, Loss: 0.7146, CLS: 0.7146, REC: 671.7971, CONTR: 2.8070
+⏱️ Epoch [55] took 305.61 seconds
+Epoch 56/100, memory allocated: 102773.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [56/100] — Train Acc: 65.79%, Loss: 0.7018, CLS: 0.7018, REC: 678.6752, CONTR: 2.7724
+⏱️ Epoch [56] took 305.42 seconds
+Epoch 57/100, memory allocated: 102774.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [57/100] — Train Acc: 65.93%, Loss: 0.7026, CLS: 0.7026, REC: 664.9349, CONTR: 2.7491
+⏱️ Epoch [57] took 305.58 seconds
+Epoch 58/100, memory allocated: 102774.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [58/100] — Train Acc: 65.89%, Loss: 0.6945, CLS: 0.6945, REC: 683.6648, CONTR: 2.7714
+⏱️ Epoch [58] took 305.52 seconds
+Epoch 59/100, memory allocated: 102775.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [59/100] — Train Acc: 65.94%, Loss: 0.6771, CLS: 0.6771, REC: 694.3064, CONTR: 2.7665
+⏱️ Epoch [59] took 305.42 seconds
+Epoch 60/100, memory allocated: 102775.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [60/100] — Train Acc: 65.66%, Loss: 0.6894, CLS: 0.6894, REC: 708.2845, CONTR: 2.7302
+⏱️ Epoch [60] took 305.57 seconds
+Epoch 61/100, memory allocated: 102776.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [61/100] — Train Acc: 66.28%, Loss: 0.6575, CLS: 0.6575, REC: 716.5927, CONTR: 2.7359
+
+📊 Validation Summary
+  Accuracy:              66.85%
+  Avg Total Loss:        0.8491
+  Classification Loss:   0.8491
+  Reconstruction Loss:   701.3825
+  Contrastive Loss:      2.5575
+
+📌 Per-Class Accuracy:
+  BPSK           : 100.00%
+  QPSK           : 96.15%
+  8PSK           : 89.19%
+  16APSK         : 85.33%
+  32APSK         : 79.60%
+  64APSK         : 54.29%
+  128APSK        : 48.12%
+  16QAM          : 78.53%
+  32QAM          : 61.23%
+  64QAM          : 19.57%
+  128QAM         : 23.13%
+  256QAM         : 30.43%
+  AM-DSB-SC      : 37.68%
+  AM-DSB-WC      : 69.74%
+  FM             : 100.00%
+  GMSK           : 100.00%
+
+⏱️ Epoch [61] took 305.38 seconds
+Epoch 62/100, memory allocated: 102776.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [62/100] — Train Acc: 66.45%, Loss: 0.6414, CLS: 0.6414, REC: 724.1603, CONTR: 2.7117
+⏱️ Epoch [62] took 305.54 seconds
+Epoch 63/100, memory allocated: 102777.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [63/100] — Train Acc: 66.39%, Loss: 0.6565, CLS: 0.6565, REC: 739.8786, CONTR: 2.6902
+⏱️ Epoch [63] took 305.34 seconds
+Epoch 64/100, memory allocated: 102777.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [64/100] — Train Acc: 66.51%, Loss: 0.6353, CLS: 0.6353, REC: 752.7896, CONTR: 2.6669
+⏱️ Epoch [64] took 305.49 seconds
+Epoch 65/100, memory allocated: 102778.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [65/100] — Train Acc: 66.60%, Loss: 0.6228, CLS: 0.6228, REC: 769.8863, CONTR: 2.6340
+⏱️ Epoch [65] took 305.39 seconds
+Epoch 66/100, memory allocated: 102778.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [66/100] — Train Acc: 66.76%, Loss: 0.6182, CLS: 0.6182, REC: 787.3200, CONTR: 2.6382
+⏱️ Epoch [66] took 305.68 seconds
+Epoch 67/100, memory allocated: 102779.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [67/100] — Train Acc: 66.76%, Loss: 0.6031, CLS: 0.6031, REC: 795.6145, CONTR: 2.6422
+⏱️ Epoch [67] took 305.54 seconds
+Epoch 68/100, memory allocated: 102779.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [68/100] — Train Acc: 66.58%, Loss: 0.6138, CLS: 0.6138, REC: 799.1109, CONTR: 2.6381
+⏱️ Epoch [68] took 304.97 seconds
+Epoch 69/100, memory allocated: 102780.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [69/100] — Train Acc: 66.54%, Loss: 0.6005, CLS: 0.6005, REC: 814.3772, CONTR: 2.6360
+⏱️ Epoch [69] took 305.67 seconds
+Epoch 70/100, memory allocated: 102780.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [70/100] — Train Acc: 66.85%, Loss: 0.5918, CLS: 0.5918, REC: 825.8998, CONTR: 2.6123
+⏱️ Epoch [70] took 305.83 seconds
+Epoch 71/100, memory allocated: 102781.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [71/100] — Train Acc: 66.82%, Loss: 0.5850, CLS: 0.5850, REC: 830.3379, CONTR: 2.6089
+
+📊 Validation Summary
+  Accuracy:              66.30%
+  Avg Total Loss:        0.9422
+  Classification Loss:   0.9422
+  Reconstruction Loss:   819.5341
+  Contrastive Loss:      2.4921
+
+📌 Per-Class Accuracy:
+  BPSK           : 100.00%
+  QPSK           : 93.86%
+  8PSK           : 93.68%
+  16APSK         : 84.38%
+  32APSK         : 73.23%
+  64APSK         : 62.16%
+  128APSK        : 36.68%
+  16QAM          : 74.40%
+  32QAM          : 53.01%
+  64QAM          : 23.11%
+  128QAM         : 23.53%
+  256QAM         : 27.90%
+  AM-DSB-SC      : 64.82%
+  AM-DSB-WC      : 53.83%
+  FM             : 100.00%
+  GMSK           : 100.00%
+
+⏱️ Epoch [71] took 305.58 seconds
+Epoch 72/100, memory allocated: 102781.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [72/100] — Train Acc: 66.82%, Loss: 0.5837, CLS: 0.5837, REC: 852.8958, CONTR: 2.5923
+⏱️ Epoch [72] took 305.65 seconds
+Epoch 73/100, memory allocated: 102782.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [73/100] — Train Acc: 66.58%, Loss: 0.5866, CLS: 0.5866, REC: 853.4321, CONTR: 2.5877
+⏱️ Epoch [73] took 305.44 seconds
+Epoch 74/100, memory allocated: 102782.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [74/100] — Train Acc: 66.91%, Loss: 0.5688, CLS: 0.5688, REC: 854.4526, CONTR: 2.5709
+⏱️ Epoch [74] took 305.48 seconds
+Epoch 75/100, memory allocated: 102783.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [75/100] — Train Acc: 66.79%, Loss: 0.5604, CLS: 0.5604, REC: 862.4718, CONTR: 2.5842
+⏱️ Epoch [75] took 305.61 seconds
+Epoch 76/100, memory allocated: 102783.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [76/100] — Train Acc: 66.97%, Loss: 0.5357, CLS: 0.5357, REC: 908.4162, CONTR: 2.5675
+⏱️ Epoch [76] took 305.41 seconds
+Epoch 77/100, memory allocated: 102784.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [77/100] — Train Acc: 67.28%, Loss: 0.5333, CLS: 0.5333, REC: 908.9854, CONTR: 2.5398
+⏱️ Epoch [77] took 305.36 seconds
+Epoch 78/100, memory allocated: 102784.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [78/100] — Train Acc: 67.13%, Loss: 0.5230, CLS: 0.5230, REC: 935.0984, CONTR: 2.5333
+⏱️ Epoch [78] took 305.40 seconds
+Epoch 79/100, memory allocated: 102785.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [79/100] — Train Acc: 67.18%, Loss: 0.5118, CLS: 0.5118, REC: 953.7826, CONTR: 2.5302
+⏱️ Epoch [79] took 305.60 seconds
+Epoch 80/100, memory allocated: 102785.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [80/100] — Train Acc: 66.92%, Loss: 0.5176, CLS: 0.5176, REC: 958.9413, CONTR: 2.4995
+⏱️ Epoch [80] took 305.46 seconds
+Epoch 81/100, memory allocated: 102786.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [81/100] — Train Acc: 67.16%, Loss: 0.4998, CLS: 0.4998, REC: 964.9001, CONTR: 2.4968
+
+📊 Validation Summary
+  Accuracy:              66.79%
+  Avg Total Loss:        0.9752
+  Classification Loss:   0.9752
+  Reconstruction Loss:   915.4985
+  Contrastive Loss:      2.3730
+
+📌 Per-Class Accuracy:
+  BPSK           : 100.00%
+  QPSK           : 96.93%
+  8PSK           : 92.94%
+  16APSK         : 84.14%
+  32APSK         : 77.56%
+  64APSK         : 57.38%
+  128APSK        : 47.78%
+  16QAM          : 76.85%
+  32QAM          : 47.78%
+  64QAM          : 25.34%
+  128QAM         : 31.13%
+  256QAM         : 33.78%
+  AM-DSB-SC      : 19.17%
+  AM-DSB-WC      : 81.16%
+  FM             : 100.00%
+  GMSK           : 100.00%
+
+⏱️ Epoch [81] took 305.49 seconds
+Epoch 82/100, memory allocated: 102786.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [82/100] — Train Acc: 67.37%, Loss: 0.4937, CLS: 0.4937, REC: 982.6345, CONTR: 2.5065
+⏱️ Epoch [82] took 305.64 seconds
+Epoch 83/100, memory allocated: 102787.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [83/100] — Train Acc: 67.23%, Loss: 0.4811, CLS: 0.4811, REC: 1007.5234, CONTR: 2.4804
+⏱️ Epoch [83] took 305.50 seconds
+Epoch 84/100, memory allocated: 102787.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [84/100] — Train Acc: 67.18%, Loss: 0.4854, CLS: 0.4854, REC: 1001.5368, CONTR: 2.4711
+⏱️ Epoch [84] took 305.81 seconds
+Epoch 85/100, memory allocated: 102788.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [85/100] — Train Acc: 67.32%, Loss: 0.4735, CLS: 0.4735, REC: 1027.7383, CONTR: 2.4784
+⏱️ Epoch [85] took 305.69 seconds
+Epoch 86/100, memory allocated: 102788.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [86/100] — Train Acc: 67.26%, Loss: 0.4748, CLS: 0.4748, REC: 1009.9882, CONTR: 2.4408
+⏱️ Epoch [86] took 305.46 seconds
+Epoch 87/100, memory allocated: 102789.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [87/100] — Train Acc: 67.24%, Loss: 0.4689, CLS: 0.4689, REC: 1046.4385, CONTR: 2.4464
+⏱️ Epoch [87] took 305.39 seconds
+Epoch 88/100, memory allocated: 102789.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [88/100] — Train Acc: 67.36%, Loss: 0.4580, CLS: 0.4580, REC: 1055.9819, CONTR: 2.4504
+⏱️ Epoch [88] took 305.31 seconds
+Epoch 89/100, memory allocated: 102790.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [89/100] — Train Acc: 67.23%, Loss: 0.4553, CLS: 0.4553, REC: 1066.7255, CONTR: 2.4610
+⏱️ Epoch [89] took 305.28 seconds
+Epoch 90/100, memory allocated: 102790.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [90/100] — Train Acc: 67.30%, Loss: 0.4641, CLS: 0.4641, REC: 1061.4087, CONTR: 2.4424
+⏱️ Epoch [90] took 344.89 seconds
+Epoch 91/100, memory allocated: 102791.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [91/100] — Train Acc: 67.61%, Loss: 0.4334, CLS: 0.4334, REC: 1102.1209, CONTR: 2.4073
+
+📊 Validation Summary
+  Accuracy:              66.42%
+  Avg Total Loss:        1.1903
+  Classification Loss:   1.1903
+  Reconstruction Loss:   1146.6469
+  Contrastive Loss:      2.2101
+
+📌 Per-Class Accuracy:
+  BPSK           : 100.00%
+  QPSK           : 97.53%
+  8PSK           : 91.52%
+  16APSK         : 87.95%
+  32APSK         : 80.26%
+  64APSK         : 33.88%
+  128APSK        : 55.69%
+  16QAM          : 76.67%
+  32QAM          : 58.86%
+  64QAM          : 10.07%
+  128QAM         : 22.90%
+  256QAM         : 46.34%
+  AM-DSB-SC      : 35.83%
+  AM-DSB-WC      : 68.48%
+  FM             : 100.00%
+  GMSK           : 99.88%
+
+⏱️ Epoch [91] took 305.30 seconds
+Epoch 92/100, memory allocated: 102791.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [92/100] — Train Acc: 67.46%, Loss: 0.4288, CLS: 0.4288, REC: 1100.2455, CONTR: 2.4089
+⏱️ Epoch [92] took 305.54 seconds
+Epoch 93/100, memory allocated: 102792.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [93/100] — Train Acc: 67.41%, Loss: 0.4212, CLS: 0.4212, REC: 1106.3429, CONTR: 2.4073
+⏱️ Epoch [93] took 305.48 seconds
+Epoch 94/100, memory allocated: 102792.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [94/100] — Train Acc: 67.65%, Loss: 0.4153, CLS: 0.4153, REC: 1140.0567, CONTR: 2.4192
+⏱️ Epoch [94] took 305.61 seconds
+Epoch 95/100, memory allocated: 102793.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [95/100] — Train Acc: 67.58%, Loss: 0.4079, CLS: 0.4079, REC: 1163.7034, CONTR: 2.3961
+⏱️ Epoch [95] took 305.61 seconds
+Epoch 96/100, memory allocated: 102793.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [96/100] — Train Acc: 67.44%, Loss: 0.4071, CLS: 0.4071, REC: 1152.0149, CONTR: 2.3593
+⏱️ Epoch [96] took 305.65 seconds
+Epoch 97/100, memory allocated: 102794.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [97/100] — Train Acc: 67.57%, Loss: 0.3964, CLS: 0.3964, REC: 1163.1880, CONTR: 2.3806
+⏱️ Epoch [97] took 305.47 seconds
+Epoch 98/100, memory allocated: 102794.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [98/100] — Train Acc: 67.41%, Loss: 0.4043, CLS: 0.4043, REC: 1176.8174, CONTR: 2.3517
+⏱️ Epoch [98] took 305.59 seconds
+Epoch 99/100, memory allocated: 102795.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [99/100] — Train Acc: 67.55%, Loss: 0.3822, CLS: 0.3822, REC: 1180.0063, CONTR: 2.3543
+⏱️ Epoch [99] took 305.59 seconds
+Epoch 100/100, memory allocated: 102795.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [100/100] — Train Acc: 67.49%, Loss: 0.3813, CLS: 0.3813, REC: 1183.6469, CONTR: 2.3494
+⏱️ Epoch [100] took 305.71 seconds
+✅ Training 3 completed in 513.21 minutes.
+📦 Model saved to results/model_fine_on_reconstruction_contrastive_XXX_10/model_model_fine_on_reconstruction_contrastive_XXX_10_run3.pth
+📊 Metrics saved to results/model_fine_on_reconstruction_contrastive_XXX_10/Quick_plot_3/metrics_model_fine_on_reconstruction_contrastive_XXX_10_run3.pkl
+📈 Metrics plot saved to results/model_fine_on_reconstruction_contrastive_XXX_10/Quick_plot_3/metrics_model_fine_on_reconstruction_contrastive_XXX_10_run3.pkl.pdf
+🔍 Test model 3 on test data loader set...
+
+🧪 Training 4: with hyperparameters: {'lr': 0.001, 'lr_gamma': 0.9, 'step_size': 15, 'weight_decay': 0.0, 'dropout': 0.2, 'optimizer': 'Adam'} **********
+[Shuffle & Restart] Splits set: train=192348, val=27478, test=54958
+📦 Original Dataset Size: (320000, 512, 2)
+📦 Used Data Length (from config): 300000
+🧪 Split Summary:
+   - Train Samples: 192348
+   - Val Samples:   27478
+   - Test Samples:  54958
+📝 Labeled vs Unlabeled per split:
+   - Train: 19125 labeled | 173223 unlabeled
+   - Val:   2789 labeled | 24689 unlabeled
+   - Test:  5564 labeled | 49394 unlabeled
+-----------------------------
+IQ min: I = -3.2635, Q = -3.3172
+IQ max: I = 3.3755, Q = 3.4937
+SNR range: [0] to [22]
+
+📊 Class distribution:
+  BPSK: 17173 samples
+  QPSK: 17110 samples
+  8PSK: 17198 samples
+  16APSK: 17155 samples
+  32APSK: 17131 samples
+  64APSK: 17205 samples
+  128APSK: 17225 samples
+  16QAM: 17160 samples
+  32QAM: 17194 samples
+  64QAM: 17264 samples
+  128QAM: 17164 samples
+  256QAM: 17184 samples
+  AM-DSB-SC: 17140 samples
+  AM-DSB-WC: 17088 samples
+  FM: 17128 samples
+  GMSK: 17265 samples
+
+📶 SNR distribution:
+  SNR 0: 25176 samples
+  SNR 2: 24998 samples
+  SNR 4: 24966 samples
+  SNR 6: 24921 samples
+  SNR 8: 24980 samples
+  SNR 10: 24834 samples
+  SNR 12: 24806 samples
+  SNR 14: 24990 samples
+  SNR 16: 25031 samples
+  SNR 18: 24994 samples
+  SNR 20: 25088 samples
+⏱️ Starting training...
+🚀 Start training Vit
+Epoch 1/100, memory allocated: 51399.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [1/100] — Train Acc: 38.56%, Loss: 1.5809, CLS: 1.5809, REC: 179.1446, CONTR: 4.2777
+
+📊 Validation Summary
+  Accuracy:              35.11%
+  Avg Total Loss:        1.6901
+  Classification Loss:   1.6901
+  Reconstruction Loss:   254.4464
+  Contrastive Loss:      4.0427
+
+📌 Per-Class Accuracy:
+  BPSK           : 95.09%
+  QPSK           : 81.69%
+  8PSK           : 1.32%
+  16APSK         : 48.06%
+  32APSK         : 3.90%
+  64APSK         : 14.69%
+  128APSK        : 0.00%
+  16QAM          : 0.00%
+  32QAM          : 18.55%
+  64QAM          : 1.44%
+  128QAM         : 0.00%
+  256QAM         : 0.06%
+  AM-DSB-SC      : 3.85%
+  AM-DSB-WC      : 96.26%
+  FM             : 100.00%
+  GMSK           : 100.00%
+
+💾 Saved new best model @ val_loss=1.690098 -> results/model_fine_on_reconstruction_contrastive_XXX_10/last_good_model4.pth
+⏱️ Epoch [1] took 305.82 seconds
+Epoch 2/100, memory allocated: 102746.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [2/100] — Train Acc: 44.49%, Loss: 1.3467, CLS: 1.3467, REC: 248.8657, CONTR: 3.9724
+💾 Saved new best model @ val_loss=1.686273 -> results/model_fine_on_reconstruction_contrastive_XXX_10/last_good_model4.pth
+⏱️ Epoch [2] took 306.07 seconds
+Epoch 3/100, memory allocated: 102747.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [3/100] — Train Acc: 45.62%, Loss: 1.3129, CLS: 1.3129, REC: 263.6557, CONTR: 3.9041
+💾 Saved new best model @ val_loss=1.408565 -> results/model_fine_on_reconstruction_contrastive_XXX_10/last_good_model4.pth
+⏱️ Epoch [3] took 306.02 seconds
+Epoch 4/100, memory allocated: 102747.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [4/100] — Train Acc: 46.65%, Loss: 1.2723, CLS: 1.2723, REC: 273.3213, CONTR: 3.8285
+💾 Saved new best model @ val_loss=1.355752 -> results/model_fine_on_reconstruction_contrastive_XXX_10/last_good_model4.pth
+⏱️ Epoch [4] took 306.09 seconds
+Epoch 5/100, memory allocated: 102748.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [5/100] — Train Acc: 47.54%, Loss: 1.2559, CLS: 1.2559, REC: 285.6994, CONTR: 3.7950
+⏱️ Epoch [5] took 305.61 seconds
+Epoch 6/100, memory allocated: 102748.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [6/100] — Train Acc: 48.01%, Loss: 1.2317, CLS: 1.2317, REC: 291.2943, CONTR: 3.7722
+⏱️ Epoch [6] took 305.85 seconds
+Epoch 7/100, memory allocated: 102749.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [7/100] — Train Acc: 48.67%, Loss: 1.2209, CLS: 1.2209, REC: 298.9651, CONTR: 3.7286
+💾 Saved new best model @ val_loss=1.349715 -> results/model_fine_on_reconstruction_contrastive_XXX_10/last_good_model4.pth
+⏱️ Epoch [7] took 305.78 seconds
+Epoch 8/100, memory allocated: 102749.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [8/100] — Train Acc: 49.27%, Loss: 1.2051, CLS: 1.2051, REC: 303.5358, CONTR: 3.7130
+💾 Saved new best model @ val_loss=1.337546 -> results/model_fine_on_reconstruction_contrastive_XXX_10/last_good_model4.pth
+⏱️ Epoch [8] took 306.06 seconds
+Epoch 9/100, memory allocated: 102750.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [9/100] — Train Acc: 49.66%, Loss: 1.1984, CLS: 1.1984, REC: 305.6850, CONTR: 3.6817
+⏱️ Epoch [9] took 305.75 seconds
+Epoch 10/100, memory allocated: 102750.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [10/100] — Train Acc: 51.21%, Loss: 1.1780, CLS: 1.1780, REC: 331.8513, CONTR: 3.5863
+💾 Saved new best model @ val_loss=1.252485 -> results/model_fine_on_reconstruction_contrastive_XXX_10/last_good_model4.pth
+⏱️ Epoch [10] took 306.03 seconds
+Epoch 11/100, memory allocated: 102751.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [11/100] — Train Acc: 52.29%, Loss: 1.1535, CLS: 1.1535, REC: 350.2412, CONTR: 3.5230
+
+📊 Validation Summary
+  Accuracy:              52.45%
+  Avg Total Loss:        1.1827
+  Classification Loss:   1.1827
+  Reconstruction Loss:   290.9912
+  Contrastive Loss:      3.3985
+
+📌 Per-Class Accuracy:
+  BPSK           : 99.94%
+  QPSK           : 71.62%
+  8PSK           : 86.94%
+  16APSK         : 69.15%
+  32APSK         : 63.06%
+  64APSK         : 11.38%
+  128APSK        : 41.21%
+  16QAM          : 21.87%
+  32QAM          : 46.50%
+  64QAM          : 2.65%
+  128QAM         : 2.05%
+  256QAM         : 24.37%
+  AM-DSB-SC      : 0.00%
+  AM-DSB-WC      : 100.00%
+  FM             : 100.00%
+  GMSK           : 100.00%
+
+💾 Saved new best model @ val_loss=1.182725 -> results/model_fine_on_reconstruction_contrastive_XXX_10/last_good_model4.pth
+⏱️ Epoch [11] took 305.81 seconds
+Epoch 12/100, memory allocated: 102751.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [12/100] — Train Acc: 53.14%, Loss: 1.1279, CLS: 1.1279, REC: 364.7014, CONTR: 3.5195
+⏱️ Epoch [12] took 327.81 seconds
+Epoch 13/100, memory allocated: 102752.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [13/100] — Train Acc: 53.87%, Loss: 1.1081, CLS: 1.1081, REC: 368.3962, CONTR: 3.4861
+💾 Saved new best model @ val_loss=1.091723 -> results/model_fine_on_reconstruction_contrastive_XXX_10/last_good_model4.pth
+⏱️ Epoch [13] took 305.80 seconds
+Epoch 14/100, memory allocated: 102752.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [14/100] — Train Acc: 54.42%, Loss: 1.0933, CLS: 1.0933, REC: 382.3229, CONTR: 3.4605
+⏱️ Epoch [14] took 305.88 seconds
+Epoch 15/100, memory allocated: 102753.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [15/100] — Train Acc: 54.90%, Loss: 1.0838, CLS: 1.0838, REC: 385.9855, CONTR: 3.4277
+⏱️ Epoch [15] took 305.76 seconds
+Epoch 16/100, memory allocated: 102753.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [16/100] — Train Acc: 55.61%, Loss: 1.0638, CLS: 1.0638, REC: 398.5214, CONTR: 3.3735
+⏱️ Epoch [16] took 305.71 seconds
+Epoch 17/100, memory allocated: 102754.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [17/100] — Train Acc: 56.07%, Loss: 1.0419, CLS: 1.0419, REC: 413.5999, CONTR: 3.3665
+⏱️ Epoch [17] took 305.76 seconds
+Epoch 18/100, memory allocated: 102754.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [18/100] — Train Acc: 56.73%, Loss: 1.0201, CLS: 1.0201, REC: 424.0322, CONTR: 3.3366
+💾 Saved new best model @ val_loss=1.025010 -> results/model_fine_on_reconstruction_contrastive_XXX_10/last_good_model4.pth
+⏱️ Epoch [18] took 305.81 seconds
+Epoch 19/100, memory allocated: 102755.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [19/100] — Train Acc: 57.09%, Loss: 1.0127, CLS: 1.0127, REC: 437.0910, CONTR: 3.2953
+⏱️ Epoch [19] took 305.70 seconds
+Epoch 20/100, memory allocated: 102755.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [20/100] — Train Acc: 57.43%, Loss: 1.0082, CLS: 1.0082, REC: 441.5602, CONTR: 3.2646
+⏱️ Epoch [20] took 306.10 seconds
+Epoch 21/100, memory allocated: 102756.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [21/100] — Train Acc: 57.61%, Loss: 1.0044, CLS: 1.0044, REC: 447.6377, CONTR: 3.2572
+
+📊 Validation Summary
+  Accuracy:              56.83%
+  Avg Total Loss:        1.1152
+  Classification Loss:   1.1152
+  Reconstruction Loss:   435.7881
+  Contrastive Loss:      3.0924
+
+📌 Per-Class Accuracy:
+  BPSK           : 99.89%
+  QPSK           : 92.42%
+  8PSK           : 92.21%
+  16APSK         : 91.03%
+  32APSK         : 63.18%
+  64APSK         : 28.70%
+  128APSK        : 14.64%
+  16QAM          : 63.76%
+  32QAM          : 30.28%
+  64QAM          : 4.58%
+  128QAM         : 14.86%
+  256QAM         : 7.14%
+  AM-DSB-SC      : 56.73%
+  AM-DSB-WC      : 51.34%
+  FM             : 100.00%
+  GMSK           : 99.24%
+
+⏱️ Epoch [21] took 306.01 seconds
+Epoch 22/100, memory allocated: 102756.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [22/100] — Train Acc: 58.37%, Loss: 0.9786, CLS: 0.9786, REC: 459.4499, CONTR: 3.2137
+⏱️ Epoch [22] took 305.73 seconds
+Epoch 23/100, memory allocated: 102757.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [23/100] — Train Acc: 58.95%, Loss: 0.9731, CLS: 0.9731, REC: 470.0724, CONTR: 3.2177
+⏱️ Epoch [23] took 305.69 seconds
+Epoch 24/100, memory allocated: 102757.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [24/100] — Train Acc: 58.70%, Loss: 0.9699, CLS: 0.9699, REC: 470.6072, CONTR: 3.2099
+⏱️ Epoch [24] took 305.49 seconds
+Epoch 25/100, memory allocated: 102758.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [25/100] — Train Acc: 59.25%, Loss: 0.9608, CLS: 0.9608, REC: 474.1782, CONTR: 3.2025
+💾 Saved new best model @ val_loss=0.969101 -> results/model_fine_on_reconstruction_contrastive_XXX_10/last_good_model4.pth
+⏱️ Epoch [25] took 305.85 seconds
+Epoch 26/100, memory allocated: 102758.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [26/100] — Train Acc: 59.89%, Loss: 0.9491, CLS: 0.9491, REC: 485.1599, CONTR: 3.1787
+💾 Saved new best model @ val_loss=0.927419 -> results/model_fine_on_reconstruction_contrastive_XXX_10/last_good_model4.pth
+⏱️ Epoch [26] took 305.97 seconds
+Epoch 27/100, memory allocated: 102759.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [27/100] — Train Acc: 60.17%, Loss: 0.9341, CLS: 0.9341, REC: 501.3322, CONTR: 3.1371
+⏱️ Epoch [27] took 305.69 seconds
+Epoch 28/100, memory allocated: 102759.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [28/100] — Train Acc: 60.14%, Loss: 0.9310, CLS: 0.9310, REC: 523.1233, CONTR: 3.1391
+⏱️ Epoch [28] took 305.92 seconds
+Epoch 29/100, memory allocated: 102760.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [29/100] — Train Acc: 60.34%, Loss: 0.9357, CLS: 0.9357, REC: 531.7979, CONTR: 3.1295
+⏱️ Epoch [29] took 305.85 seconds
+Epoch 30/100, memory allocated: 102760.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [30/100] — Train Acc: 60.89%, Loss: 0.9235, CLS: 0.9235, REC: 527.1399, CONTR: 3.0828
+⏱️ Epoch [30] took 305.80 seconds
+Epoch 31/100, memory allocated: 102761.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [31/100] — Train Acc: 61.35%, Loss: 0.9060, CLS: 0.9060, REC: 528.9439, CONTR: 3.0798
+
+📊 Validation Summary
+  Accuracy:              61.41%
+  Avg Total Loss:        1.0122
+  Classification Loss:   1.0122
+  Reconstruction Loss:   503.7929
+  Contrastive Loss:      2.8642
+
+📌 Per-Class Accuracy:
+  BPSK           : 100.00%
+  QPSK           : 94.91%
+  8PSK           : 91.70%
+  16APSK         : 84.73%
+  32APSK         : 65.74%
+  64APSK         : 32.30%
+  128APSK        : 29.91%
+  16QAM          : 63.07%
+  32QAM          : 25.61%
+  64QAM          : 34.20%
+  128QAM         : 21.24%
+  256QAM         : 18.84%
+  AM-DSB-SC      : 55.49%
+  AM-DSB-WC      : 66.18%
+  FM             : 100.00%
+  GMSK           : 99.88%
+
+⏱️ Epoch [31] took 305.86 seconds
+Epoch 32/100, memory allocated: 102761.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [32/100] — Train Acc: 61.82%, Loss: 0.8906, CLS: 0.8906, REC: 543.6079, CONTR: 3.0679
+⏱️ Epoch [32] took 305.85 seconds
+Epoch 33/100, memory allocated: 102762.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [33/100] — Train Acc: 61.94%, Loss: 0.8768, CLS: 0.8768, REC: 545.4615, CONTR: 3.0656
+⏱️ Epoch [33] took 305.83 seconds
+Epoch 34/100, memory allocated: 102762.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [34/100] — Train Acc: 61.94%, Loss: 0.8756, CLS: 0.8756, REC: 552.2219, CONTR: 3.0346
+💾 Saved new best model @ val_loss=0.926707 -> results/model_fine_on_reconstruction_contrastive_XXX_10/last_good_model4.pth
+⏱️ Epoch [34] took 305.87 seconds
+Epoch 35/100, memory allocated: 102763.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [35/100] — Train Acc: 62.41%, Loss: 0.8522, CLS: 0.8522, REC: 567.7678, CONTR: 2.9932
+💾 Saved new best model @ val_loss=0.879433 -> results/model_fine_on_reconstruction_contrastive_XXX_10/last_good_model4.pth
+⏱️ Epoch [35] took 305.97 seconds
+Epoch 36/100, memory allocated: 102763.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [36/100] — Train Acc: 62.55%, Loss: 0.8509, CLS: 0.8509, REC: 573.1128, CONTR: 3.0043
+⏱️ Epoch [36] took 306.01 seconds
+Epoch 37/100, memory allocated: 102764.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [37/100] — Train Acc: 62.84%, Loss: 0.8447, CLS: 0.8447, REC: 600.9917, CONTR: 2.9761
+⏱️ Epoch [37] took 305.92 seconds
+Epoch 38/100, memory allocated: 102764.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [38/100] — Train Acc: 62.86%, Loss: 0.8397, CLS: 0.8397, REC: 594.2326, CONTR: 2.9507
+⏱️ Epoch [38] took 306.01 seconds
+Epoch 39/100, memory allocated: 102765.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [39/100] — Train Acc: 63.19%, Loss: 0.8375, CLS: 0.8375, REC: 583.4413, CONTR: 2.9482
+⏱️ Epoch [39] took 305.76 seconds
+Epoch 40/100, memory allocated: 102765.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [40/100] — Train Acc: 63.19%, Loss: 0.8317, CLS: 0.8317, REC: 592.7275, CONTR: 2.9385
+⏱️ Epoch [40] took 305.63 seconds
+Epoch 41/100, memory allocated: 102766.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [41/100] — Train Acc: 63.30%, Loss: 0.8134, CLS: 0.8134, REC: 601.2266, CONTR: 2.9234
+
+📊 Validation Summary
+  Accuracy:              63.14%
+  Avg Total Loss:        0.9236
+  Classification Loss:   0.9236
+  Reconstruction Loss:   555.6884
+  Contrastive Loss:      2.7091
+
+📌 Per-Class Accuracy:
+  BPSK           : 100.00%
+  QPSK           : 94.85%
+  8PSK           : 95.82%
+  16APSK         : 82.55%
+  32APSK         : 69.28%
+  64APSK         : 57.00%
+  128APSK        : 28.88%
+  16QAM          : 68.84%
+  32QAM          : 41.95%
+  64QAM          : 32.27%
+  128QAM         : 11.64%
+  256QAM         : 26.96%
+  AM-DSB-SC      : 13.07%
+  AM-DSB-WC      : 88.96%
+  FM             : 100.00%
+  GMSK           : 99.82%
+
+⏱️ Epoch [41] took 305.60 seconds
+Epoch 42/100, memory allocated: 102766.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [42/100] — Train Acc: 63.26%, Loss: 0.8273, CLS: 0.8273, REC: 592.1588, CONTR: 2.8890
+⏱️ Epoch [42] took 305.69 seconds
+Epoch 43/100, memory allocated: 102767.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [43/100] — Train Acc: 63.63%, Loss: 0.8034, CLS: 0.8034, REC: 610.9020, CONTR: 2.8829
+⏱️ Epoch [43] took 305.75 seconds
+Epoch 44/100, memory allocated: 102767.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [44/100] — Train Acc: 63.56%, Loss: 0.8103, CLS: 0.8103, REC: 618.0278, CONTR: 2.8966
+⏱️ Epoch [44] took 305.87 seconds
+Epoch 45/100, memory allocated: 102768.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [45/100] — Train Acc: 63.98%, Loss: 0.7922, CLS: 0.7922, REC: 625.0308, CONTR: 2.8731
+⏱️ Epoch [45] took 305.86 seconds
+Epoch 46/100, memory allocated: 102768.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [46/100] — Train Acc: 64.26%, Loss: 0.7706, CLS: 0.7706, REC: 656.2983, CONTR: 2.8579
+⏱️ Epoch [46] took 305.97 seconds
+Epoch 47/100, memory allocated: 102769.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [47/100] — Train Acc: 64.28%, Loss: 0.7682, CLS: 0.7682, REC: 658.8884, CONTR: 2.8273
+💾 Saved new best model @ val_loss=0.869371 -> results/model_fine_on_reconstruction_contrastive_XXX_10/last_good_model4.pth
+⏱️ Epoch [47] took 305.95 seconds
+Epoch 48/100, memory allocated: 102769.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [48/100] — Train Acc: 64.53%, Loss: 0.7441, CLS: 0.7441, REC: 689.1423, CONTR: 2.8296
+💾 Saved new best model @ val_loss=0.839781 -> results/model_fine_on_reconstruction_contrastive_XXX_10/last_good_model4.pth
+⏱️ Epoch [48] took 305.77 seconds
+Epoch 49/100, memory allocated: 102770.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [49/100] — Train Acc: 64.72%, Loss: 0.7495, CLS: 0.7495, REC: 688.8188, CONTR: 2.8030
+⏱️ Epoch [49] took 305.77 seconds
+Epoch 50/100, memory allocated: 102770.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [50/100] — Train Acc: 64.96%, Loss: 0.7398, CLS: 0.7398, REC: 693.8631, CONTR: 2.7786
+⏱️ Epoch [50] took 305.65 seconds
+Epoch 51/100, memory allocated: 102771.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [51/100] — Train Acc: 64.86%, Loss: 0.7330, CLS: 0.7330, REC: 709.1445, CONTR: 2.7893
+
+📊 Validation Summary
+  Accuracy:              64.01%
+  Avg Total Loss:        0.9099
+  Classification Loss:   0.9099
+  Reconstruction Loss:   652.7107
+  Contrastive Loss:      2.5466
+
+📌 Per-Class Accuracy:
+  BPSK           : 100.00%
+  QPSK           : 94.43%
+  8PSK           : 95.02%
+  16APSK         : 81.52%
+  32APSK         : 71.38%
+  64APSK         : 55.80%
+  128APSK        : 44.73%
+  16QAM          : 75.25%
+  32QAM          : 46.97%
+  64QAM          : 24.50%
+  128QAM         : 9.83%
+  256QAM         : 28.05%
+  AM-DSB-SC      : 0.11%
+  AM-DSB-WC      : 98.48%
+  FM             : 100.00%
+  GMSK           : 99.77%
+
+⏱️ Epoch [51] took 305.60 seconds
+Epoch 52/100, memory allocated: 102771.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [52/100] — Train Acc: 64.98%, Loss: 0.7327, CLS: 0.7327, REC: 703.3983, CONTR: 2.7479
+⏱️ Epoch [52] took 305.90 seconds
+Epoch 53/100, memory allocated: 102772.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [53/100] — Train Acc: 65.02%, Loss: 0.7267, CLS: 0.7267, REC: 708.6731, CONTR: 2.7654
+⏱️ Epoch [53] took 305.88 seconds
+Epoch 54/100, memory allocated: 102772.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [54/100] — Train Acc: 65.19%, Loss: 0.7203, CLS: 0.7203, REC: 723.7324, CONTR: 2.7584
+⏱️ Epoch [54] took 305.81 seconds
+Epoch 55/100, memory allocated: 102773.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [55/100] — Train Acc: 65.05%, Loss: 0.7108, CLS: 0.7108, REC: 724.3542, CONTR: 2.7437
+⏱️ Epoch [55] took 305.79 seconds
+Epoch 56/100, memory allocated: 102773.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [56/100] — Train Acc: 65.45%, Loss: 0.7015, CLS: 0.7015, REC: 736.8651, CONTR: 2.7301
+⏱️ Epoch [56] took 328.61 seconds
+Epoch 57/100, memory allocated: 102774.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [57/100] — Train Acc: 65.40%, Loss: 0.7005, CLS: 0.7005, REC: 749.7425, CONTR: 2.6978
+💾 Saved new best model @ val_loss=0.823590 -> results/model_fine_on_reconstruction_contrastive_XXX_10/last_good_model4.pth
+⏱️ Epoch [57] took 306.06 seconds
+Epoch 58/100, memory allocated: 102774.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [58/100] — Train Acc: 65.31%, Loss: 0.6921, CLS: 0.6921, REC: 778.5453, CONTR: 2.7078
+⏱️ Epoch [58] took 305.94 seconds
+Epoch 59/100, memory allocated: 102775.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [59/100] — Train Acc: 65.35%, Loss: 0.6755, CLS: 0.6755, REC: 772.1233, CONTR: 2.6991
+⏱️ Epoch [59] took 305.83 seconds
+Epoch 60/100, memory allocated: 102775.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [60/100] — Train Acc: 65.41%, Loss: 0.6767, CLS: 0.6767, REC: 791.6825, CONTR: 2.7044
+⏱️ Epoch [60] took 305.67 seconds
+Epoch 61/100, memory allocated: 102776.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [61/100] — Train Acc: 65.79%, Loss: 0.6486, CLS: 0.6486, REC: 823.8736, CONTR: 2.6800
+
+📊 Validation Summary
+  Accuracy:              65.64%
+  Avg Total Loss:        0.9337
+  Classification Loss:   0.9337
+  Reconstruction Loss:   884.5659
+  Contrastive Loss:      2.5111
+
+📌 Per-Class Accuracy:
+  BPSK           : 99.94%
+  QPSK           : 93.84%
+  8PSK           : 96.28%
+  16APSK         : 86.85%
+  32APSK         : 79.06%
+  64APSK         : 49.51%
+  128APSK        : 54.47%
+  16QAM          : 70.63%
+  32QAM          : 44.69%
+  64QAM          : 17.28%
+  128QAM         : 29.78%
+  256QAM         : 26.27%
+  AM-DSB-SC      : 21.15%
+  AM-DSB-WC      : 81.60%
+  FM             : 100.00%
+  GMSK           : 99.88%
+
+⏱️ Epoch [61] took 305.71 seconds
+Epoch 62/100, memory allocated: 102776.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [62/100] — Train Acc: 66.02%, Loss: 0.6530, CLS: 0.6530, REC: 817.7821, CONTR: 2.6617
+⏱️ Epoch [62] took 305.93 seconds
+Epoch 63/100, memory allocated: 102777.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [63/100] — Train Acc: 65.98%, Loss: 0.6511, CLS: 0.6511, REC: 826.6061, CONTR: 2.6362
+⏱️ Epoch [63] took 305.94 seconds
+Epoch 64/100, memory allocated: 102777.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [64/100] — Train Acc: 66.16%, Loss: 0.6312, CLS: 0.6312, REC: 831.9851, CONTR: 2.6288
+⏱️ Epoch [64] took 305.82 seconds
+Epoch 65/100, memory allocated: 102778.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [65/100] — Train Acc: 66.06%, Loss: 0.6269, CLS: 0.6269, REC: 842.2727, CONTR: 2.6112
+⏱️ Epoch [65] took 305.87 seconds
+Epoch 66/100, memory allocated: 102778.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [66/100] — Train Acc: 66.08%, Loss: 0.6294, CLS: 0.6294, REC: 855.0513, CONTR: 2.6057
+⏱️ Epoch [66] took 305.67 seconds
+Epoch 67/100, memory allocated: 102779.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [67/100] — Train Acc: 66.17%, Loss: 0.6150, CLS: 0.6150, REC: 868.3896, CONTR: 2.6012
+⏱️ Epoch [67] took 305.87 seconds
+Epoch 68/100, memory allocated: 102779.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [68/100] — Train Acc: 66.11%, Loss: 0.6136, CLS: 0.6136, REC: 865.9378, CONTR: 2.5896
+⏱️ Epoch [68] took 305.83 seconds
+Epoch 69/100, memory allocated: 102780.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [69/100] — Train Acc: 66.25%, Loss: 0.6038, CLS: 0.6038, REC: 894.3901, CONTR: 2.5666
+⏱️ Epoch [69] took 305.77 seconds
+Epoch 70/100, memory allocated: 102780.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [70/100] — Train Acc: 66.10%, Loss: 0.5923, CLS: 0.5923, REC: 905.3508, CONTR: 2.5356
+⏱️ Epoch [70] took 305.91 seconds
+Epoch 71/100, memory allocated: 102781.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [71/100] — Train Acc: 66.30%, Loss: 0.5952, CLS: 0.5952, REC: 899.8053, CONTR: 2.5418
+
+📊 Validation Summary
+  Accuracy:              64.47%
+  Avg Total Loss:        1.0120
+  Classification Loss:   1.0120
+  Reconstruction Loss:   902.5929
+  Contrastive Loss:      2.2831
+
+📌 Per-Class Accuracy:
+  BPSK           : 100.00%
+  QPSK           : 92.89%
+  8PSK           : 96.91%
+  16APSK         : 84.55%
+  32APSK         : 80.05%
+  64APSK         : 34.76%
+  128APSK        : 57.87%
+  16QAM          : 72.30%
+  32QAM          : 45.57%
+  64QAM          : 17.40%
+  128QAM         : 22.18%
+  256QAM         : 26.61%
+  AM-DSB-SC      : 15.89%
+  AM-DSB-WC      : 85.86%
+  FM             : 100.00%
+  GMSK           : 99.94%
+
+⏱️ Epoch [71] took 305.87 seconds
+Epoch 72/100, memory allocated: 102781.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [72/100] — Train Acc: 66.27%, Loss: 0.5821, CLS: 0.5821, REC: 936.8093, CONTR: 2.5392
+⏱️ Epoch [72] took 305.86 seconds
+Epoch 73/100, memory allocated: 102782.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [73/100] — Train Acc: 66.43%, Loss: 0.5706, CLS: 0.5706, REC: 915.5214, CONTR: 2.5205
+⏱️ Epoch [73] took 305.62 seconds
+Epoch 74/100, memory allocated: 102782.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [74/100] — Train Acc: 66.31%, Loss: 0.5609, CLS: 0.5609, REC: 929.1235, CONTR: 2.5023
+⏱️ Epoch [74] took 305.95 seconds
+Epoch 75/100, memory allocated: 102783.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [75/100] — Train Acc: 66.34%, Loss: 0.5566, CLS: 0.5566, REC: 939.5341, CONTR: 2.4882
+⏱️ Epoch [75] took 305.81 seconds
+Epoch 76/100, memory allocated: 102783.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [76/100] — Train Acc: 66.60%, Loss: 0.5503, CLS: 0.5503, REC: 946.6368, CONTR: 2.4697
+⏱️ Epoch [76] took 305.66 seconds
+Epoch 77/100, memory allocated: 102784.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [77/100] — Train Acc: 66.83%, Loss: 0.5264, CLS: 0.5264, REC: 981.6256, CONTR: 2.4739
+⏱️ Epoch [77] took 305.92 seconds
+Epoch 78/100, memory allocated: 102784.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [78/100] — Train Acc: 66.76%, Loss: 0.5183, CLS: 0.5183, REC: 990.8852, CONTR: 2.4696
+⏱️ Epoch [78] took 305.96 seconds
+Epoch 79/100, memory allocated: 102785.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [79/100] — Train Acc: 66.64%, Loss: 0.5160, CLS: 0.5160, REC: 1004.7242, CONTR: 2.4491
+⏱️ Epoch [79] took 306.00 seconds
+Epoch 80/100, memory allocated: 102785.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [80/100] — Train Acc: 66.83%, Loss: 0.5023, CLS: 0.5023, REC: 997.3548, CONTR: 2.4468
+⏱️ Epoch [80] took 305.91 seconds
+Epoch 81/100, memory allocated: 102786.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [81/100] — Train Acc: 66.74%, Loss: 0.5102, CLS: 0.5102, REC: 989.5130, CONTR: 2.4308
+
+📊 Validation Summary
+  Accuracy:              66.38%
+  Avg Total Loss:        1.0377
+  Classification Loss:   1.0377
+  Reconstruction Loss:   995.2798
+  Contrastive Loss:      2.2473
+
+📌 Per-Class Accuracy:
+  BPSK           : 100.00%
+  QPSK           : 94.14%
+  8PSK           : 96.05%
+  16APSK         : 85.45%
+  32APSK         : 76.44%
+  64APSK         : 65.69%
+  128APSK        : 43.46%
+  16QAM          : 76.17%
+  32QAM          : 47.14%
+  64QAM          : 24.26%
+  128QAM         : 31.19%
+  256QAM         : 20.39%
+  AM-DSB-SC      : 28.73%
+  AM-DSB-WC      : 73.77%
+  FM             : 100.00%
+  GMSK           : 100.00%
+
+⏱️ Epoch [81] took 305.97 seconds
+Epoch 82/100, memory allocated: 102786.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [82/100] — Train Acc: 66.72%, Loss: 0.5011, CLS: 0.5011, REC: 1014.1771, CONTR: 2.4315
+⏱️ Epoch [82] took 305.88 seconds
+Epoch 83/100, memory allocated: 102787.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [83/100] — Train Acc: 66.65%, Loss: 0.4922, CLS: 0.4922, REC: 1024.1176, CONTR: 2.4036
+⏱️ Epoch [83] took 305.86 seconds
+Epoch 84/100, memory allocated: 102787.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [84/100] — Train Acc: 66.73%, Loss: 0.4888, CLS: 0.4888, REC: 1033.8377, CONTR: 2.4007
+⏱️ Epoch [84] took 305.86 seconds
+Epoch 85/100, memory allocated: 102788.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [85/100] — Train Acc: 66.80%, Loss: 0.4745, CLS: 0.4745, REC: 1036.5409, CONTR: 2.3854
+⏱️ Epoch [85] took 305.86 seconds
+Epoch 86/100, memory allocated: 102788.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [86/100] — Train Acc: 66.85%, Loss: 0.4713, CLS: 0.4713, REC: 1054.0353, CONTR: 2.3690
+⏱️ Epoch [86] took 305.80 seconds
+Epoch 87/100, memory allocated: 102789.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [87/100] — Train Acc: 66.87%, Loss: 0.4714, CLS: 0.4714, REC: 1044.2066, CONTR: 2.3672
+⏱️ Epoch [87] took 305.73 seconds
+Epoch 88/100, memory allocated: 102789.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [88/100] — Train Acc: 67.08%, Loss: 0.4505, CLS: 0.4505, REC: 1065.6265, CONTR: 2.3816
+⏱️ Epoch [88] took 305.69 seconds
+Epoch 89/100, memory allocated: 102790.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [89/100] — Train Acc: 66.77%, Loss: 0.4534, CLS: 0.4534, REC: 1079.3083, CONTR: 2.3753
+⏱️ Epoch [89] took 305.94 seconds
+Epoch 90/100, memory allocated: 102790.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [90/100] — Train Acc: 66.84%, Loss: 0.4484, CLS: 0.4484, REC: 1073.6582, CONTR: 2.3686
+⏱️ Epoch [90] took 305.73 seconds
+Epoch 91/100, memory allocated: 102791.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [91/100] — Train Acc: 66.93%, Loss: 0.4445, CLS: 0.4445, REC: 1085.3624, CONTR: 2.3224
+
+📊 Validation Summary
+  Accuracy:              64.62%
+  Avg Total Loss:        1.1868
+  Classification Loss:   1.1868
+  Reconstruction Loss:   1060.6935
+  Contrastive Loss:      2.0815
+
+📌 Per-Class Accuracy:
+  BPSK           : 99.83%
+  QPSK           : 92.59%
+  8PSK           : 95.65%
+  16APSK         : 86.48%
+  32APSK         : 75.63%
+  64APSK         : 53.97%
+  128APSK        : 36.08%
+  16QAM          : 72.13%
+  32QAM          : 43.76%
+  64QAM          : 21.49%
+  128QAM         : 34.87%
+  256QAM         : 25.40%
+  AM-DSB-SC      : 6.50%
+  AM-DSB-WC      : 91.36%
+  FM             : 100.00%
+  GMSK           : 99.82%
+
+⏱️ Epoch [91] took 305.70 seconds
+Epoch 92/100, memory allocated: 102791.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [92/100] — Train Acc: 67.11%, Loss: 0.4133, CLS: 0.4133, REC: 1165.0183, CONTR: 2.3326
+⏱️ Epoch [92] took 305.96 seconds
+Epoch 93/100, memory allocated: 102792.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [93/100] — Train Acc: 67.35%, Loss: 0.4080, CLS: 0.4080, REC: 1163.9845, CONTR: 2.3396
+⏱️ Epoch [93] took 305.75 seconds
+Epoch 94/100, memory allocated: 102792.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [94/100] — Train Acc: 67.11%, Loss: 0.4079, CLS: 0.4079, REC: 1163.0181, CONTR: 2.3293
+⏱️ Epoch [94] took 305.83 seconds
+Epoch 95/100, memory allocated: 102793.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [95/100] — Train Acc: 67.21%, Loss: 0.3988, CLS: 0.3988, REC: 1182.7859, CONTR: 2.3215
+⏱️ Epoch [95] took 305.70 seconds
+Epoch 96/100, memory allocated: 102793.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [96/100] — Train Acc: 67.01%, Loss: 0.4021, CLS: 0.4021, REC: 1168.3737, CONTR: 2.3007
+⏱️ Epoch [96] took 305.91 seconds
+Epoch 97/100, memory allocated: 102794.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [97/100] — Train Acc: 67.09%, Loss: 0.3937, CLS: 0.3937, REC: 1186.4028, CONTR: 2.2903
+⏱️ Epoch [97] took 305.90 seconds
+Epoch 98/100, memory allocated: 102794.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [98/100] — Train Acc: 66.89%, Loss: 0.3966, CLS: 0.3966, REC: 1196.6402, CONTR: 2.3009
+⏱️ Epoch [98] took 305.85 seconds
+Epoch 99/100, memory allocated: 102795.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [99/100] — Train Acc: 67.15%, Loss: 0.3889, CLS: 0.3889, REC: 1199.6662, CONTR: 2.2957
+⏱️ Epoch [99] took 305.69 seconds
+Epoch 100/100, memory allocated: 102795.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [100/100] — Train Acc: 67.08%, Loss: 0.3946, CLS: 0.3946, REC: 1209.9788, CONTR: 2.2879
+⏱️ Epoch [100] took 305.70 seconds
+✅ Training 4 completed in 511.98 minutes.
+📦 Model saved to results/model_fine_on_reconstruction_contrastive_XXX_10/model_model_fine_on_reconstruction_contrastive_XXX_10_run4.pth
+📊 Metrics saved to results/model_fine_on_reconstruction_contrastive_XXX_10/Quick_plot_4/metrics_model_fine_on_reconstruction_contrastive_XXX_10_run4.pkl
+📈 Metrics plot saved to results/model_fine_on_reconstruction_contrastive_XXX_10/Quick_plot_4/metrics_model_fine_on_reconstruction_contrastive_XXX_10_run4.pkl.pdf
+🔍 Test model 4 on test data loader set...
+
+🧪 Training 5: with hyperparameters: {'lr': 0.001, 'lr_gamma': 0.9, 'step_size': 15, 'weight_decay': 0.0, 'dropout': 0.2, 'optimizer': 'Adam'} **********
+[Shuffle & Restart] Splits set: train=192348, val=27478, test=54958
+📦 Original Dataset Size: (320000, 512, 2)
+📦 Used Data Length (from config): 300000
+🧪 Split Summary:
+   - Train Samples: 192348
+   - Val Samples:   27478
+   - Test Samples:  54958
+📝 Labeled vs Unlabeled per split:
+   - Train: 19174 labeled | 173174 unlabeled
+   - Val:   2728 labeled | 24750 unlabeled
+   - Test:  5576 labeled | 49382 unlabeled
+-----------------------------
+IQ min: I = -3.2635, Q = -3.3172
+IQ max: I = 3.3755, Q = 3.4937
+SNR range: [0] to [22]
+
+📊 Class distribution:
+  BPSK: 17173 samples
+  QPSK: 17110 samples
+  8PSK: 17198 samples
+  16APSK: 17155 samples
+  32APSK: 17131 samples
+  64APSK: 17205 samples
+  128APSK: 17225 samples
+  16QAM: 17160 samples
+  32QAM: 17194 samples
+  64QAM: 17264 samples
+  128QAM: 17164 samples
+  256QAM: 17184 samples
+  AM-DSB-SC: 17140 samples
+  AM-DSB-WC: 17088 samples
+  FM: 17128 samples
+  GMSK: 17265 samples
+
+📶 SNR distribution:
+  SNR 0: 25176 samples
+  SNR 2: 24998 samples
+  SNR 4: 24966 samples
+  SNR 6: 24921 samples
+  SNR 8: 24980 samples
+  SNR 10: 24834 samples
+  SNR 12: 24806 samples
+  SNR 14: 24990 samples
+  SNR 16: 25031 samples
+  SNR 18: 24994 samples
+  SNR 20: 25088 samples
+⏱️ Starting training...
+🚀 Start training Vit
+Epoch 1/100, memory allocated: 51399.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [1/100] — Train Acc: 39.66%, Loss: 1.5647, CLS: 1.5647, REC: 188.7276, CONTR: 4.1934
+
+📊 Validation Summary
+  Accuracy:              39.97%
+  Avg Total Loss:        1.5259
+  Classification Loss:   1.5259
+  Reconstruction Loss:   193.4764
+  Contrastive Loss:      4.2366
+
+📌 Per-Class Accuracy:
+  BPSK           : 98.20%
+  QPSK           : 64.15%
+  8PSK           : 21.44%
+  16APSK         : 41.67%
+  32APSK         : 38.92%
+  64APSK         : 0.12%
+  128APSK        : 18.66%
+  16QAM          : 5.68%
+  32QAM          : 25.47%
+  64QAM          : 25.20%
+  128QAM         : 0.00%
+  256QAM         : 0.00%
+  AM-DSB-SC      : 100.00%
+  AM-DSB-WC      : 0.00%
+  FM             : 99.88%
+  GMSK           : 99.94%
+
+💾 Saved new best model @ val_loss=1.525945 -> results/model_fine_on_reconstruction_contrastive_XXX_10/last_good_model5.pth
+⏱️ Epoch [1] took 305.53 seconds
+Epoch 2/100, memory allocated: 102746.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [2/100] — Train Acc: 45.08%, Loss: 1.3314, CLS: 1.3314, REC: 251.8501, CONTR: 3.9811
+💾 Saved new best model @ val_loss=1.353701 -> results/model_fine_on_reconstruction_contrastive_XXX_10/last_good_model5.pth
+⏱️ Epoch [2] took 305.87 seconds
+Epoch 3/100, memory allocated: 102747.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [3/100] — Train Acc: 46.10%, Loss: 1.2856, CLS: 1.2856, REC: 274.3548, CONTR: 3.8628
+⏱️ Epoch [3] took 305.72 seconds
+Epoch 4/100, memory allocated: 102747.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [4/100] — Train Acc: 47.13%, Loss: 1.2584, CLS: 1.2584, REC: 281.5304, CONTR: 3.8178
+⏱️ Epoch [4] took 305.69 seconds
+Epoch 5/100, memory allocated: 102748.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [5/100] — Train Acc: 47.10%, Loss: 1.2578, CLS: 1.2578, REC: 288.3176, CONTR: 3.8105
+💾 Saved new best model @ val_loss=1.302197 -> results/model_fine_on_reconstruction_contrastive_XXX_10/last_good_model5.pth
+⏱️ Epoch [5] took 305.88 seconds
+Epoch 6/100, memory allocated: 102748.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [6/100] — Train Acc: 47.84%, Loss: 1.2345, CLS: 1.2345, REC: 293.7328, CONTR: 3.7868
+⏱️ Epoch [6] took 305.74 seconds
+Epoch 7/100, memory allocated: 102749.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [7/100] — Train Acc: 48.38%, Loss: 1.2332, CLS: 1.2332, REC: 299.4950, CONTR: 3.7364
+⏱️ Epoch [7] took 305.85 seconds
+Epoch 8/100, memory allocated: 102749.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [8/100] — Train Acc: 48.83%, Loss: 1.2096, CLS: 1.2096, REC: 317.7166, CONTR: 3.7275
+💾 Saved new best model @ val_loss=1.177567 -> results/model_fine_on_reconstruction_contrastive_XXX_10/last_good_model5.pth
+⏱️ Epoch [8] took 305.93 seconds
+Epoch 9/100, memory allocated: 102750.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [9/100] — Train Acc: 49.90%, Loss: 1.1930, CLS: 1.1930, REC: 319.0865, CONTR: 3.6958
+⏱️ Epoch [9] took 305.80 seconds
+Epoch 10/100, memory allocated: 102750.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [10/100] — Train Acc: 50.16%, Loss: 1.1838, CLS: 1.1838, REC: 317.5419, CONTR: 3.6845
+⏱️ Epoch [10] took 305.70 seconds
+Epoch 11/100, memory allocated: 102751.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [11/100] — Train Acc: 51.00%, Loss: 1.1757, CLS: 1.1757, REC: 318.5569, CONTR: 3.6196
+
+📊 Validation Summary
+  Accuracy:              47.54%
+  Avg Total Loss:        1.2852
+  Classification Loss:   1.2852
+  Reconstruction Loss:   270.7031
+  Contrastive Loss:      3.5700
+
+📌 Per-Class Accuracy:
+  BPSK           : 100.00%
+  QPSK           : 87.20%
+  8PSK           : 28.74%
+  16APSK         : 75.90%
+  32APSK         : 61.13%
+  64APSK         : 27.47%
+  128APSK        : 10.96%
+  16QAM          : 38.23%
+  32QAM          : 14.30%
+  64QAM          : 16.71%
+  128QAM         : 0.30%
+  256QAM         : 0.34%
+  AM-DSB-SC      : 0.29%
+  AM-DSB-WC      : 99.37%
+  FM             : 99.94%
+  GMSK           : 99.82%
+
+⏱️ Epoch [11] took 305.56 seconds
+Epoch 12/100, memory allocated: 102751.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [12/100] — Train Acc: 52.28%, Loss: 1.1559, CLS: 1.1559, REC: 328.8973, CONTR: 3.5726
+💾 Saved new best model @ val_loss=1.121202 -> results/model_fine_on_reconstruction_contrastive_XXX_10/last_good_model5.pth
+⏱️ Epoch [12] took 305.95 seconds
+Epoch 13/100, memory allocated: 102752.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [13/100] — Train Acc: 53.30%, Loss: 1.1350, CLS: 1.1350, REC: 353.7642, CONTR: 3.5067
+⏱️ Epoch [13] took 305.79 seconds
+Epoch 14/100, memory allocated: 102752.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [14/100] — Train Acc: 54.25%, Loss: 1.1049, CLS: 1.1049, REC: 375.9790, CONTR: 3.4786
+⏱️ Epoch [14] took 305.74 seconds
+Epoch 15/100, memory allocated: 102753.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [15/100] — Train Acc: 54.97%, Loss: 1.0892, CLS: 1.0892, REC: 384.6790, CONTR: 3.4258
+💾 Saved new best model @ val_loss=1.103594 -> results/model_fine_on_reconstruction_contrastive_XXX_10/last_good_model5.pth
+⏱️ Epoch [15] took 305.94 seconds
+Epoch 16/100, memory allocated: 102753.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [16/100] — Train Acc: 56.15%, Loss: 1.0508, CLS: 1.0508, REC: 408.1877, CONTR: 3.4048
+⏱️ Epoch [16] took 305.69 seconds
+Epoch 17/100, memory allocated: 102754.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [17/100] — Train Acc: 56.42%, Loss: 1.0396, CLS: 1.0396, REC: 415.5765, CONTR: 3.3793
+💾 Saved new best model @ val_loss=1.073234 -> results/model_fine_on_reconstruction_contrastive_XXX_10/last_good_model5.pth
+⏱️ Epoch [17] took 306.11 seconds
+Epoch 18/100, memory allocated: 102754.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [18/100] — Train Acc: 56.87%, Loss: 1.0324, CLS: 1.0324, REC: 428.3428, CONTR: 3.3673
+💾 Saved new best model @ val_loss=0.949210 -> results/model_fine_on_reconstruction_contrastive_XXX_10/last_good_model5.pth
+⏱️ Epoch [18] took 305.92 seconds
+Epoch 19/100, memory allocated: 102755.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [19/100] — Train Acc: 57.42%, Loss: 1.0159, CLS: 1.0159, REC: 444.3715, CONTR: 3.3094
+⏱️ Epoch [19] took 305.73 seconds
+Epoch 20/100, memory allocated: 102755.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [20/100] — Train Acc: 57.86%, Loss: 1.0048, CLS: 1.0048, REC: 439.5546, CONTR: 3.2925
+⏱️ Epoch [20] took 305.75 seconds
+Epoch 21/100, memory allocated: 102756.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [21/100] — Train Acc: 57.75%, Loss: 1.0011, CLS: 1.0011, REC: 435.5369, CONTR: 3.3197
+
+📊 Validation Summary
+  Accuracy:              58.51%
+  Avg Total Loss:        1.0384
+  Classification Loss:   1.0384
+  Reconstruction Loss:   413.6254
+  Contrastive Loss:      3.2104
+
+📌 Per-Class Accuracy:
+  BPSK           : 100.00%
+  QPSK           : 94.18%
+  8PSK           : 87.17%
+  16APSK         : 88.57%
+  32APSK         : 66.45%
+  64APSK         : 13.17%
+  128APSK        : 18.72%
+  16QAM          : 63.61%
+  32QAM          : 47.49%
+  64QAM          : 44.91%
+  128QAM         : 1.07%
+  256QAM         : 4.71%
+  AM-DSB-SC      : 87.68%
+  AM-DSB-WC      : 16.85%
+  FM             : 100.00%
+  GMSK           : 99.58%
+
+⏱️ Epoch [21] took 305.72 seconds
+Epoch 22/100, memory allocated: 102756.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [22/100] — Train Acc: 58.35%, Loss: 0.9899, CLS: 0.9899, REC: 445.2844, CONTR: 3.3003
+⏱️ Epoch [22] took 305.80 seconds
+Epoch 23/100, memory allocated: 102757.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [23/100] — Train Acc: 58.80%, Loss: 0.9751, CLS: 0.9751, REC: 460.7042, CONTR: 3.2671
+⏱️ Epoch [23] took 305.67 seconds
+Epoch 24/100, memory allocated: 102757.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [24/100] — Train Acc: 59.51%, Loss: 0.9665, CLS: 0.9665, REC: 451.6137, CONTR: 3.2475
+⏱️ Epoch [24] took 305.73 seconds
+Epoch 25/100, memory allocated: 102758.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [25/100] — Train Acc: 60.02%, Loss: 0.9514, CLS: 0.9514, REC: 453.3190, CONTR: 3.2485
+⏱️ Epoch [25] took 305.79 seconds
+Epoch 26/100, memory allocated: 102758.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [26/100] — Train Acc: 59.91%, Loss: 0.9581, CLS: 0.9581, REC: 466.2593, CONTR: 3.2298
+⏱️ Epoch [26] took 305.69 seconds
+Epoch 27/100, memory allocated: 102759.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [27/100] — Train Acc: 60.50%, Loss: 0.9477, CLS: 0.9477, REC: 451.0377, CONTR: 3.2120
+⏱️ Epoch [27] took 305.60 seconds
+Epoch 28/100, memory allocated: 102759.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [28/100] — Train Acc: 60.75%, Loss: 0.9346, CLS: 0.9346, REC: 467.5517, CONTR: 3.2020
+⏱️ Epoch [28] took 305.87 seconds
+Epoch 29/100, memory allocated: 102760.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [29/100] — Train Acc: 61.23%, Loss: 0.9262, CLS: 0.9262, REC: 458.2670, CONTR: 3.1961
+⏱️ Epoch [29] took 305.69 seconds
+Epoch 30/100, memory allocated: 102760.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [30/100] — Train Acc: 61.11%, Loss: 0.9193, CLS: 0.9193, REC: 464.2318, CONTR: 3.1788
+⏱️ Epoch [30] took 305.70 seconds
+Epoch 31/100, memory allocated: 102761.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [31/100] — Train Acc: 62.00%, Loss: 0.8952, CLS: 0.8952, REC: 479.6527, CONTR: 3.1446
+
+📊 Validation Summary
+  Accuracy:              62.33%
+  Avg Total Loss:        0.9447
+  Classification Loss:   0.9447
+  Reconstruction Loss:   488.7026
+  Contrastive Loss:      3.0258
+
+📌 Per-Class Accuracy:
+  BPSK           : 100.00%
+  QPSK           : 93.14%
+  8PSK           : 94.00%
+  16APSK         : 83.73%
+  32APSK         : 64.74%
+  64APSK         : 51.31%
+  128APSK        : 20.17%
+  16QAM          : 71.30%
+  32QAM          : 50.84%
+  64QAM          : 16.18%
+  128QAM         : 12.89%
+  256QAM         : 36.09%
+  AM-DSB-SC      : 13.30%
+  AM-DSB-WC      : 89.15%
+  FM             : 100.00%
+  GMSK           : 100.00%
+
+💾 Saved new best model @ val_loss=0.944695 -> results/model_fine_on_reconstruction_contrastive_XXX_10/last_good_model5.pth
+⏱️ Epoch [31] took 306.12 seconds
+Epoch 32/100, memory allocated: 102761.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [32/100] — Train Acc: 62.22%, Loss: 0.8900, CLS: 0.8900, REC: 500.2914, CONTR: 3.1526
+💾 Saved new best model @ val_loss=0.862683 -> results/model_fine_on_reconstruction_contrastive_XXX_10/last_good_model5.pth
+⏱️ Epoch [32] took 306.10 seconds
+Epoch 33/100, memory allocated: 102762.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [33/100] — Train Acc: 62.37%, Loss: 0.8812, CLS: 0.8812, REC: 501.3903, CONTR: 3.1232
+⏱️ Epoch [33] took 305.85 seconds
+Epoch 34/100, memory allocated: 102762.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [34/100] — Train Acc: 62.88%, Loss: 0.8730, CLS: 0.8730, REC: 502.0422, CONTR: 3.0923
+⏱️ Epoch [34] took 306.01 seconds
+Epoch 35/100, memory allocated: 102763.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [35/100] — Train Acc: 62.73%, Loss: 0.8695, CLS: 0.8695, REC: 518.9160, CONTR: 3.0858
+⏱️ Epoch [35] took 305.84 seconds
+Epoch 36/100, memory allocated: 102763.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [36/100] — Train Acc: 63.06%, Loss: 0.8489, CLS: 0.8489, REC: 529.2581, CONTR: 3.0837
+⏱️ Epoch [36] took 306.10 seconds
+Epoch 37/100, memory allocated: 102764.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [37/100] — Train Acc: 63.10%, Loss: 0.8635, CLS: 0.8635, REC: 513.4111, CONTR: 3.0482
+⏱️ Epoch [37] took 305.76 seconds
+Epoch 38/100, memory allocated: 102764.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [38/100] — Train Acc: 63.44%, Loss: 0.8466, CLS: 0.8466, REC: 518.1840, CONTR: 3.0569
+⏱️ Epoch [38] took 305.91 seconds
+Epoch 39/100, memory allocated: 102765.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [39/100] — Train Acc: 63.39%, Loss: 0.8404, CLS: 0.8404, REC: 518.3877, CONTR: 3.0403
+💾 Saved new best model @ val_loss=0.828075 -> results/model_fine_on_reconstruction_contrastive_XXX_10/last_good_model5.pth
+⏱️ Epoch [39] took 305.90 seconds
+Epoch 40/100, memory allocated: 102765.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [40/100] — Train Acc: 63.75%, Loss: 0.8338, CLS: 0.8338, REC: 536.9846, CONTR: 3.0109
+⏱️ Epoch [40] took 305.56 seconds
+Epoch 41/100, memory allocated: 102766.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [41/100] — Train Acc: 63.91%, Loss: 0.8371, CLS: 0.8371, REC: 520.2214, CONTR: 3.0103
+
+📊 Validation Summary
+  Accuracy:              65.75%
+  Avg Total Loss:        0.8283
+  Classification Loss:   0.8283
+  Reconstruction Loss:   516.5640
+  Contrastive Loss:      2.9685
+
+📌 Per-Class Accuracy:
+  BPSK           : 100.00%
+  QPSK           : 92.97%
+  8PSK           : 93.35%
+  16APSK         : 77.82%
+  32APSK         : 77.38%
+  64APSK         : 41.60%
+  128APSK        : 30.71%
+  16QAM          : 76.35%
+  32QAM          : 67.65%
+  64QAM          : 20.35%
+  128QAM         : 19.18%
+  256QAM         : 47.36%
+  AM-DSB-SC      : 35.47%
+  AM-DSB-WC      : 71.03%
+  FM             : 100.00%
+  GMSK           : 99.88%
+
+⏱️ Epoch [41] took 305.86 seconds
+Epoch 42/100, memory allocated: 102766.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [42/100] — Train Acc: 63.82%, Loss: 0.8275, CLS: 0.8275, REC: 525.1228, CONTR: 3.0261
+⏱️ Epoch [42] took 305.92 seconds
+Epoch 43/100, memory allocated: 102767.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [43/100] — Train Acc: 63.75%, Loss: 0.8222, CLS: 0.8222, REC: 539.1677, CONTR: 3.0205
+⏱️ Epoch [43] took 305.97 seconds
+Epoch 44/100, memory allocated: 102767.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [44/100] — Train Acc: 63.98%, Loss: 0.8235, CLS: 0.8235, REC: 538.6806, CONTR: 2.9907
+⏱️ Epoch [44] took 305.87 seconds
+Epoch 45/100, memory allocated: 102768.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [45/100] — Train Acc: 64.09%, Loss: 0.8039, CLS: 0.8039, REC: 549.5919, CONTR: 2.9806
+⏱️ Epoch [45] took 306.04 seconds
+Epoch 46/100, memory allocated: 102768.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [46/100] — Train Acc: 64.80%, Loss: 0.7736, CLS: 0.7736, REC: 571.7538, CONTR: 2.9624
+⏱️ Epoch [46] took 305.77 seconds
+Epoch 47/100, memory allocated: 102769.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [47/100] — Train Acc: 64.87%, Loss: 0.7777, CLS: 0.7777, REC: 570.2933, CONTR: 2.9808
+⏱️ Epoch [47] took 305.94 seconds
+Epoch 48/100, memory allocated: 102769.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [48/100] — Train Acc: 64.78%, Loss: 0.7696, CLS: 0.7696, REC: 570.6858, CONTR: 2.9606
+⏱️ Epoch [48] took 305.82 seconds
+Epoch 49/100, memory allocated: 102770.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [49/100] — Train Acc: 65.06%, Loss: 0.7565, CLS: 0.7565, REC: 579.3628, CONTR: 2.9513
+⏱️ Epoch [49] took 306.07 seconds
+Epoch 50/100, memory allocated: 102770.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [50/100] — Train Acc: 65.27%, Loss: 0.7551, CLS: 0.7551, REC: 583.5563, CONTR: 2.9000
+⏱️ Epoch [50] took 306.04 seconds
+Epoch 51/100, memory allocated: 102771.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [51/100] — Train Acc: 65.16%, Loss: 0.7589, CLS: 0.7589, REC: 595.6653, CONTR: 2.8863
+
+📊 Validation Summary
+  Accuracy:              65.89%
+  Avg Total Loss:        0.8571
+  Classification Loss:   0.8571
+  Reconstruction Loss:   576.9708
+  Contrastive Loss:      2.7280
+
+📌 Per-Class Accuracy:
+  BPSK           : 100.00%
+  QPSK           : 94.41%
+  8PSK           : 93.94%
+  16APSK         : 81.19%
+  32APSK         : 79.92%
+  64APSK         : 53.34%
+  128APSK        : 49.36%
+  16QAM          : 73.02%
+  32QAM          : 37.88%
+  64QAM          : 40.00%
+  128QAM         : 23.04%
+  256QAM         : 16.15%
+  AM-DSB-SC      : 44.41%
+  AM-DSB-WC      : 69.13%
+  FM             : 100.00%
+  GMSK           : 100.00%
+
+⏱️ Epoch [51] took 305.90 seconds
+Epoch 52/100, memory allocated: 102771.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [52/100] — Train Acc: 65.24%, Loss: 0.7561, CLS: 0.7561, REC: 584.0458, CONTR: 2.8700
+⏱️ Epoch [52] took 306.07 seconds
+Epoch 53/100, memory allocated: 102772.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [53/100] — Train Acc: 65.64%, Loss: 0.7329, CLS: 0.7329, REC: 599.8248, CONTR: 2.8553
+⏱️ Epoch [53] took 305.88 seconds
+Epoch 54/100, memory allocated: 102772.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [54/100] — Train Acc: 65.50%, Loss: 0.7372, CLS: 0.7372, REC: 596.4712, CONTR: 2.8594
+⏱️ Epoch [54] took 305.88 seconds
+Epoch 55/100, memory allocated: 102773.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [55/100] — Train Acc: 65.83%, Loss: 0.7286, CLS: 0.7286, REC: 606.9760, CONTR: 2.8349
+⏱️ Epoch [55] took 306.12 seconds
+Epoch 56/100, memory allocated: 102773.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [56/100] — Train Acc: 65.92%, Loss: 0.7256, CLS: 0.7256, REC: 603.6486, CONTR: 2.8490
+⏱️ Epoch [56] took 305.84 seconds
+Epoch 57/100, memory allocated: 102774.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [57/100] — Train Acc: 65.73%, Loss: 0.7219, CLS: 0.7219, REC: 609.7001, CONTR: 2.8122
+⏱️ Epoch [57] took 306.03 seconds
+Epoch 58/100, memory allocated: 102774.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [58/100] — Train Acc: 65.92%, Loss: 0.7141, CLS: 0.7141, REC: 613.4401, CONTR: 2.8080
+⏱️ Epoch [58] took 305.89 seconds
+Epoch 59/100, memory allocated: 102775.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [59/100] — Train Acc: 66.03%, Loss: 0.7116, CLS: 0.7116, REC: 624.3497, CONTR: 2.7921
+⏱️ Epoch [59] took 306.02 seconds
+Epoch 60/100, memory allocated: 102775.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [60/100] — Train Acc: 65.76%, Loss: 0.7052, CLS: 0.7052, REC: 628.3968, CONTR: 2.8092
+⏱️ Epoch [60] took 305.77 seconds
+Epoch 61/100, memory allocated: 102776.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [61/100] — Train Acc: 66.28%, Loss: 0.6774, CLS: 0.6774, REC: 665.9427, CONTR: 2.7988
+
+📊 Validation Summary
+  Accuracy:              67.50%
+  Avg Total Loss:        0.8406
+  Classification Loss:   0.8406
+  Reconstruction Loss:   652.9459
+  Contrastive Loss:      2.6822
+
+📌 Per-Class Accuracy:
+  BPSK           : 100.00%
+  QPSK           : 93.78%
+  8PSK           : 93.41%
+  16APSK         : 87.78%
+  32APSK         : 75.37%
+  64APSK         : 56.32%
+  128APSK        : 47.06%
+  16QAM          : 76.46%
+  32QAM          : 67.93%
+  64QAM          : 30.29%
+  128QAM         : 11.28%
+  256QAM         : 36.15%
+  AM-DSB-SC      : 23.15%
+  AM-DSB-WC      : 80.67%
+  FM             : 100.00%
+  GMSK           : 100.00%
+
+⏱️ Epoch [61] took 305.90 seconds
+Epoch 62/100, memory allocated: 102776.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [62/100] — Train Acc: 66.17%, Loss: 0.6752, CLS: 0.6752, REC: 672.5091, CONTR: 2.7777
+⏱️ Epoch [62] took 305.75 seconds
+Epoch 63/100, memory allocated: 102777.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [63/100] — Train Acc: 66.57%, Loss: 0.6514, CLS: 0.6514, REC: 676.0669, CONTR: 2.7436
+⏱️ Epoch [63] took 306.01 seconds
+Epoch 64/100, memory allocated: 102777.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [64/100] — Train Acc: 66.61%, Loss: 0.6509, CLS: 0.6509, REC: 679.7297, CONTR: 2.7418
+⏱️ Epoch [64] took 305.78 seconds
+Epoch 65/100, memory allocated: 102778.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [65/100] — Train Acc: 66.32%, Loss: 0.6524, CLS: 0.6524, REC: 701.1949, CONTR: 2.7231
+⏱️ Epoch [65] took 305.71 seconds
+Epoch 66/100, memory allocated: 102778.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [66/100] — Train Acc: 66.61%, Loss: 0.6404, CLS: 0.6404, REC: 721.3287, CONTR: 2.7044
+⏱️ Epoch [66] took 305.92 seconds
+Epoch 67/100, memory allocated: 102779.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [67/100] — Train Acc: 66.72%, Loss: 0.6387, CLS: 0.6387, REC: 725.5256, CONTR: 2.6929
+⏱️ Epoch [67] took 306.02 seconds
+Epoch 68/100, memory allocated: 102779.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [68/100] — Train Acc: 66.64%, Loss: 0.6366, CLS: 0.6366, REC: 725.4382, CONTR: 2.6865
+💾 Saved new best model @ val_loss=0.811708 -> results/model_fine_on_reconstruction_contrastive_XXX_10/last_good_model5.pth
+⏱️ Epoch [68] took 641.65 seconds
+Epoch 69/100, memory allocated: 102780.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [69/100] — Train Acc: 66.78%, Loss: 0.6282, CLS: 0.6282, REC: 738.4143, CONTR: 2.6694
+⏱️ Epoch [69] took 304.74 seconds
+Epoch 70/100, memory allocated: 102780.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [70/100] — Train Acc: 66.62%, Loss: 0.6171, CLS: 0.6171, REC: 766.7676, CONTR: 2.6875
+⏱️ Epoch [70] took 305.86 seconds
+Epoch 71/100, memory allocated: 102781.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [71/100] — Train Acc: 66.80%, Loss: 0.6168, CLS: 0.6168, REC: 767.1551, CONTR: 2.6606
+
+📊 Validation Summary
+  Accuracy:              66.78%
+  Avg Total Loss:        0.9297
+  Classification Loss:   0.9297
+  Reconstruction Loss:   754.1810
+  Contrastive Loss:      2.4259
+
+📌 Per-Class Accuracy:
+  BPSK           : 99.94%
+  QPSK           : 96.14%
+  8PSK           : 93.35%
+  16APSK         : 83.39%
+  32APSK         : 76.67%
+  64APSK         : 50.36%
+  128APSK        : 48.76%
+  16QAM          : 78.30%
+  32QAM          : 55.92%
+  64QAM          : 23.82%
+  128QAM         : 23.22%
+  256QAM         : 41.15%
+  AM-DSB-SC      : 7.51%
+  AM-DSB-WC      : 90.65%
+  FM             : 100.00%
+  GMSK           : 99.88%
+
+⏱️ Epoch [71] took 305.83 seconds
+Epoch 72/100, memory allocated: 102781.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [72/100] — Train Acc: 66.68%, Loss: 0.6055, CLS: 0.6055, REC: 787.6452, CONTR: 2.6185
+⏱️ Epoch [72] took 305.95 seconds
+Epoch 73/100, memory allocated: 102782.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [73/100] — Train Acc: 66.82%, Loss: 0.5978, CLS: 0.5978, REC: 788.9908, CONTR: 2.6311
+⏱️ Epoch [73] took 305.83 seconds
+Epoch 74/100, memory allocated: 102782.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [74/100] — Train Acc: 66.82%, Loss: 0.5910, CLS: 0.5910, REC: 790.1335, CONTR: 2.6144
+⏱️ Epoch [74] took 306.21 seconds
+Epoch 75/100, memory allocated: 102783.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [75/100] — Train Acc: 66.83%, Loss: 0.5799, CLS: 0.5799, REC: 798.9905, CONTR: 2.6326
+⏱️ Epoch [75] took 306.04 seconds
+Epoch 76/100, memory allocated: 102783.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [76/100] — Train Acc: 67.21%, Loss: 0.5684, CLS: 0.5684, REC: 821.1494, CONTR: 2.6102
+⏱️ Epoch [76] took 305.96 seconds
+Epoch 77/100, memory allocated: 102784.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [77/100] — Train Acc: 67.16%, Loss: 0.5587, CLS: 0.5587, REC: 841.0628, CONTR: 2.6077
+⏱️ Epoch [77] took 305.85 seconds
+Epoch 78/100, memory allocated: 102784.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [78/100] — Train Acc: 67.37%, Loss: 0.5553, CLS: 0.5553, REC: 860.1705, CONTR: 2.5987
+⏱️ Epoch [78] took 305.85 seconds
+Epoch 79/100, memory allocated: 102785.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [79/100] — Train Acc: 67.37%, Loss: 0.5386, CLS: 0.5386, REC: 872.6054, CONTR: 2.5619
+⏱️ Epoch [79] took 306.02 seconds
+Epoch 80/100, memory allocated: 102785.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [80/100] — Train Acc: 67.39%, Loss: 0.5487, CLS: 0.5487, REC: 876.4850, CONTR: 2.5510
+⏱️ Epoch [80] took 306.12 seconds
+Epoch 81/100, memory allocated: 102786.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [81/100] — Train Acc: 67.44%, Loss: 0.5270, CLS: 0.5270, REC: 889.3489, CONTR: 2.5716
+
+📊 Validation Summary
+  Accuracy:              65.38%
+  Avg Total Loss:        1.0924
+  Classification Loss:   1.0924
+  Reconstruction Loss:   938.0195
+  Contrastive Loss:      2.3769
+
+📌 Per-Class Accuracy:
+  BPSK           : 100.00%
+  QPSK           : 94.52%
+  8PSK           : 93.88%
+  16APSK         : 86.54%
+  32APSK         : 74.07%
+  64APSK         : 51.85%
+  128APSK        : 54.45%
+  16QAM          : 79.10%
+  32QAM          : 62.18%
+  64QAM          : 28.90%
+  128QAM         : 11.64%
+  256QAM         : 12.93%
+  AM-DSB-SC      : 15.42%
+  AM-DSB-WC      : 81.19%
+  FM             : 100.00%
+  GMSK           : 100.00%
+
+⏱️ Epoch [81] took 305.76 seconds
+Epoch 82/100, memory allocated: 102786.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [82/100] — Train Acc: 67.30%, Loss: 0.5249, CLS: 0.5249, REC: 906.8483, CONTR: 2.5420
+⏱️ Epoch [82] took 305.76 seconds
+Epoch 83/100, memory allocated: 102787.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [83/100] — Train Acc: 67.40%, Loss: 0.5118, CLS: 0.5118, REC: 914.1701, CONTR: 2.5451
+⏱️ Epoch [83] took 305.91 seconds
+Epoch 84/100, memory allocated: 102787.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [84/100] — Train Acc: 67.36%, Loss: 0.5087, CLS: 0.5087, REC: 916.4213, CONTR: 2.5194
+⏱️ Epoch [84] took 306.01 seconds
+Epoch 85/100, memory allocated: 102788.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [85/100] — Train Acc: 67.33%, Loss: 0.4988, CLS: 0.4988, REC: 923.7544, CONTR: 2.5144
+⏱️ Epoch [85] took 305.91 seconds
+Epoch 86/100, memory allocated: 102788.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [86/100] — Train Acc: 67.32%, Loss: 0.4981, CLS: 0.4981, REC: 937.2839, CONTR: 2.4913
+⏱️ Epoch [86] took 305.98 seconds
+Epoch 87/100, memory allocated: 102789.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [87/100] — Train Acc: 67.51%, Loss: 0.5033, CLS: 0.5033, REC: 945.7989, CONTR: 2.5164
+⏱️ Epoch [87] took 305.87 seconds
+Epoch 88/100, memory allocated: 102789.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [88/100] — Train Acc: 67.27%, Loss: 0.4770, CLS: 0.4770, REC: 952.8067, CONTR: 2.4895
+⏱️ Epoch [88] took 306.21 seconds
+Epoch 89/100, memory allocated: 102790.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [89/100] — Train Acc: 67.26%, Loss: 0.4841, CLS: 0.4841, REC: 961.6396, CONTR: 2.4805
+⏱️ Epoch [89] took 305.74 seconds
+Epoch 90/100, memory allocated: 102790.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [90/100] — Train Acc: 67.34%, Loss: 0.4690, CLS: 0.4690, REC: 958.3897, CONTR: 2.4590
+⏱️ Epoch [90] took 306.00 seconds
+Epoch 91/100, memory allocated: 102791.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [91/100] — Train Acc: 67.43%, Loss: 0.4663, CLS: 0.4663, REC: 983.7127, CONTR: 2.4451
+
+📊 Validation Summary
+  Accuracy:              66.86%
+  Avg Total Loss:        1.0851
+  Classification Loss:   1.0851
+  Reconstruction Loss:   956.3938
+  Contrastive Loss:      2.2210
+
+📌 Per-Class Accuracy:
+  BPSK           : 100.00%
+  QPSK           : 97.46%
+  8PSK           : 88.18%
+  16APSK         : 84.85%
+  32APSK         : 81.93%
+  64APSK         : 54.95%
+  128APSK        : 49.67%
+  16QAM          : 66.07%
+  32QAM          : 53.41%
+  64QAM          : 29.54%
+  128QAM         : 17.99%
+  256QAM         : 33.79%
+  AM-DSB-SC      : 40.23%
+  AM-DSB-WC      : 72.24%
+  FM             : 100.00%
+  GMSK           : 100.00%
+
+⏱️ Epoch [91] took 305.88 seconds
+Epoch 92/100, memory allocated: 102791.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [92/100] — Train Acc: 67.62%, Loss: 0.4413, CLS: 0.4413, REC: 990.7209, CONTR: 2.4296
+⏱️ Epoch [92] took 306.08 seconds
+Epoch 93/100, memory allocated: 102792.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [93/100] — Train Acc: 67.61%, Loss: 0.4434, CLS: 0.4434, REC: 1007.0328, CONTR: 2.4354
+⏱️ Epoch [93] took 305.88 seconds
+Epoch 94/100, memory allocated: 102792.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [94/100] — Train Acc: 67.62%, Loss: 0.4260, CLS: 0.4260, REC: 997.6420, CONTR: 2.4232
+⏱️ Epoch [94] took 305.80 seconds
+Epoch 95/100, memory allocated: 102793.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [95/100] — Train Acc: 67.68%, Loss: 0.4288, CLS: 0.4288, REC: 993.9567, CONTR: 2.4030
+⏱️ Epoch [95] took 305.86 seconds
+Epoch 96/100, memory allocated: 102793.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [96/100] — Train Acc: 67.82%, Loss: 0.4271, CLS: 0.4271, REC: 1004.5735, CONTR: 2.4320
+⏱️ Epoch [96] took 305.97 seconds
+Epoch 97/100, memory allocated: 102794.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [97/100] — Train Acc: 67.76%, Loss: 0.4091, CLS: 0.4091, REC: 1012.1196, CONTR: 2.4246
+⏱️ Epoch [97] took 305.90 seconds
+Epoch 98/100, memory allocated: 102794.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [98/100] — Train Acc: 67.79%, Loss: 0.4075, CLS: 0.4075, REC: 1019.6353, CONTR: 2.4175
+⏱️ Epoch [98] took 305.93 seconds
+Epoch 99/100, memory allocated: 102795.0000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [99/100] — Train Acc: 67.66%, Loss: 0.3988, CLS: 0.3988, REC: 1032.2834, CONTR: 2.4158
+⏱️ Epoch [99] took 306.21 seconds
+Epoch 100/100, memory allocated: 102795.5000 MB
+🔧 Learning rate = 0.001
+✅ Epoch [100/100] — Train Acc: 67.63%, Loss: 0.4015, CLS: 0.4015, REC: 1055.8392, CONTR: 2.3831
+⏱️ Epoch [100] took 305.95 seconds
+✅ Training 5 completed in 515.38 minutes.
+📦 Model saved to results/model_fine_on_reconstruction_contrastive_XXX_10/model_model_fine_on_reconstruction_contrastive_XXX_10_run5.pth
+📊 Metrics saved to results/model_fine_on_reconstruction_contrastive_XXX_10/Quick_plot_5/metrics_model_fine_on_reconstruction_contrastive_XXX_10_run5.pkl
+📈 Metrics plot saved to results/model_fine_on_reconstruction_contrastive_XXX_10/Quick_plot_5/metrics_model_fine_on_reconstruction_contrastive_XXX_10_run5.pkl.pdf
+🔍 Test model 5 on test data loader set...
